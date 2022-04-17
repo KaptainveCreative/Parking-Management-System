@@ -21,26 +21,6 @@
 
 
 
-<%--    <a href="login/login">Login</a>   |--%>
-
-    <%--    <a href="/park/Search">Search</a>   |--%>
-
-
-
-
-<%--    <a href="/park/Search">Search</a>   |--%>
-
-
-<%--    <a href="/login/Signup">Sign up</a>   |--%>
-
-
-
-
-<%--    <sec:authorize access="hasAuthority('ADMIN')">--%>
-<%--    | <a href="/park/Search">Search</a> |--%>
-<%--    </sec:authorize>--%>
-
-
     <sec:authorize access="!isAuthenticated()">
     | <a href="/login/login">Login</a> |
     |  <a href="/login/Signup">Sign Up</a> |
@@ -49,7 +29,7 @@
     </sec:authorize>
 
     <sec:authorize access="isAuthenticated()">
-      <a href="park/Listing">List your parking spot?</a>  |
+      <a href="/park/List">List your parking spot?</a>  |
       <a href="/park/Search">Search</a>
       <a href="/login/logout">Logout  </a>  &nbsp;  &nbsp;  <span>Hello!</span>
         <%--    <p>Hello!</p>--%>

@@ -104,7 +104,7 @@ public class UserController {
         userDAO.save(user);
 
 
-        userDAO.save(user);
+
 
         //response.addObject("form", form);
         response.setViewName("redirect:/login/login");

@@ -28,23 +28,43 @@ public class ParkSpotController{
 
             response.setViewName("park/Search");
 
-            //List<ParkingSpot> parkingSpots = ParkingSpotDAO.findAll();
 
-            List<ParkingSpot> parkingSpots = parkingSpotDAO.findByStateIgnoreCase( state);
 
-            //List<ParkingSpot> = new ArrayList<>();
-            log.info("{}", parkingSpots.size());
-//            List<Object[]> info = parkingSpotDAO.getInfo( state); not working
+            List<ParkingSpot> parkingSpots = parkingSpotDAO.findByStateIgnoreCase( state); // finding spots by state
 
-           // List<ParkingSpot> allSpots = parkingSpotDAO.findAll();
-            //@Query( value = ""
-            //List<ParkingSpot> parkingSpot = parkingSpotDAO.findParkingSpotByStatus(status);
-            //response.addObject("info", info);
             response.addObject("parkingSpots", parkingSpots);
-            //response.addObject("allSpots", allSpots);
 
+
+            List<ParkingSpot> allparkingSpots = parkingSpotDAO.findAll(); // finding All spots
+
+
+            response.addObject("allparkingSpots", allparkingSpots);
 
             return response;
         }
+
+
+
+//
+//    @GetMapping( "/park/Search")
+//    public ModelAndView search() {
+//        ModelAndView response = new ModelAndView();
+//
+//        response.setViewName("park/Search");
+//
+//
+//
+//        List<ParkingSpot> parkingSpots = parkingSpotDAO.findByStateIgnoreCase( state); // finding spots by state
+//
+//        response.addObject("parkingSpots", parkingSpots);
+//
+//
+//        List<ParkingSpot> allparkingSpots = parkingSpotDAO.findByStateIgnoreCase( state); // finding All spots
+//
+//
+//        response.addObject("allparkingSpots", allparkingSpots);
+//
+//        return response;
+//    }
 
 }

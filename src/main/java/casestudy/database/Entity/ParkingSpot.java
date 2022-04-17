@@ -45,6 +45,7 @@ public class ParkingSpot {
 
     @Column(name = "quantity", nullable = false)
     private int quantity;
+
 //
 //    @Column(name = "cities_id", nullable = false)
 //    private Integer citiesId;
