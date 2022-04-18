@@ -48,7 +48,7 @@
 
                     <li class="nav-item">
                         <sec:authorize access="!isAuthenticated()">
-                        <a class="nav-link mx-2" href="/login/Signup"><i class="fas fa-plus-circle pe-2"></i>Sign up </a>
+                        <a class="nav-link mx-2" href="/login/Signup"> <i class="fas fa-plus-circle pe-2"> </i>Sign up </a>
                         </sec:authorize>
                     </li>
                     <li>
