@@ -1,11 +1,9 @@
 package casestudy.controller;
 
+import casestudy.database.DAO.CompanyDAO;
 import casestudy.database.DAO.ParkingSpotDAO;
 import casestudy.database.DAO.ReviewDAO;
-import casestudy.database.Entity.ParkingSpot;
-import casestudy.database.Entity.Review;
-import casestudy.database.Entity.User;
-import casestudy.database.Entity.UserRole;
+import casestudy.database.Entity.*;
 import casestudy.formbean.ListFormBean;
 import casestudy.formbean.RegisterFormBean;
 import casestudy.formbean.ReviewBean;
@@ -36,6 +34,8 @@ public class ReviewController {
     @Autowired
     private ReviewDAO reviewDAO;
 
+    @Autowired
+    private CompanyDAO companyDAO;
 
     @Autowired
     private ParkingSpotDAO parkingSpotDAO;
@@ -83,7 +83,9 @@ public class ReviewController {
 
         Review review = new Review();
 
-        review.setId(form.getCompanyId());
+        Company company = new Company();
+
+        company.setId(form.getCompanyId());
         review.setCustomerReviews(form.getCustomerReviews());
 
         reviewDAO.save(review);

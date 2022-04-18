@@ -22,7 +22,7 @@
 
 <div class="sign-up-form">
     <!--    <img src="./images/P1.jpg" alt=""> -->
-    <h1> Sign up now</h1>
+    <h1> Sign up now to learn more </h1>
     <input class="input-box" type="text" name="firstName" id="firstNameId"  value="${form.firstName}" placeholder=" Your First Name ">
     <v:forEach items="${bindingResult.getFieldErrors('firstName')}" var="error">
         <div style="color: red;"> ${error.getDefaultMessage()} </div>

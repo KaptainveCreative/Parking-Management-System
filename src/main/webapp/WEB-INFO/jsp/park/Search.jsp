@@ -2,13 +2,13 @@
 
 <jsp:include page="../include/header.jsp" />
 
-
+<link rel="stylesheet" href="../../../pub/css/search.css">
 <h1> Parking Spot look up </h1>
 
 <form action="/park/Search" method="get" >
-    We collaborate with companies across many states following states. Here are the states we are working with this calendar year ( MN, NY, CA,IL, DC, CO,TX, NEB, GA, AZ )
+    <h4>We collaborate with companies across many states following states. Here are the states we are working with this calendar year ( MN, NY, CA,IL, DC, CO,TX, NEB, GA, AZ ) </h4>
     <br>
-    Search by state's acronym.
+     <p>Search by state's acronym.</p>
          <input type="text" name="state" id="statusid">
                     <button type="submit" >Search </button>
 
@@ -51,9 +51,9 @@
     <tr scope="row">
 
         <form action="/park/Search" method="get" >
-            To see all availabe spots, hit Search below
+            <p>To see all availabe spots, hit Search below</p>
             <br>
-            <%--    <input type="text" name="state" id="stateid">--%>
+        <%--    <input type="text" name="state" id="stateid">--%>
             <button type="submit" >Search</button>
         </form>
                 <th>Company Name</th>
