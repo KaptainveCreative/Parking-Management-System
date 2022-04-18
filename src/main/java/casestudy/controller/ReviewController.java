@@ -83,12 +83,16 @@ public class ReviewController {
 
         Review review = new Review();
 
-        Company company = new Company();
+        Company company = companyDAO.getById(form.getCompanyId());
 
-        company.setId(form.getCompanyId());
+        review.setCompany(company);
+
         review.setCustomerReviews(form.getCustomerReviews());
 
         reviewDAO.save(review);
+
+//        companyDAO.save(company);
+
 
         response.setViewName("/park/Review");
         return response;
