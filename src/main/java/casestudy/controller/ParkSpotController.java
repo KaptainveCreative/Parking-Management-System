@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ public class ParkSpotController{
 
 
         @GetMapping( "/park/Search")
-        public ModelAndView search( String state) {
+        public ModelAndView search(  String state) {
             ModelAndView response = new ModelAndView();
 
             response.setViewName("park/Search");
@@ -40,31 +41,13 @@ public class ParkSpotController{
 
             response.addObject("allparkingSpots", allparkingSpots);
 
+            response.setViewName("park/Search");
+
             return response;
         }
 
 
 
-//
-//    @GetMapping( "/park/Search")
-//    public ModelAndView search() {
-//        ModelAndView response = new ModelAndView();
-//
-//        response.setViewName("park/Search");
-//
-//
-//
-//        List<ParkingSpot> parkingSpots = parkingSpotDAO.findByStateIgnoreCase( state); // finding spots by state
-//
-//        response.addObject("parkingSpots", parkingSpots);
-//
-//
-//        List<ParkingSpot> allparkingSpots = parkingSpotDAO.findByStateIgnoreCase( state); // finding All spots
-//
-//
-//        response.addObject("allparkingSpots", allparkingSpots);
-//
-//        return response;
-//    }
+
 
 }
