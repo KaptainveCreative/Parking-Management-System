@@ -1,11 +1,25 @@
-.bg-image-vertical {
+img {
     position: relative;
+    border: 6px solid black;
     overflow: hidden;
+    border-radius :40px ;
+    padding: 10px;
+    width: 150px;
+    height: 100px;
     background-repeat: no-repeat;
-    background-position: right center;
+    background-position: left center;
     background-size: auto 100%;
 }
 
+/*body {*/
+/*    background-image: url("../../pub/images/P4.jpg");*/
+
+/*    background-repeat: no-repeat;*/
+
+/*        background-position: right center;*/
+/*        background-size: auto 100%;*/
+/*        width: auto;*/
+/*}*/
 @media (min-width: 1025px) {
     .h-custom-2 {
         height: 90%;

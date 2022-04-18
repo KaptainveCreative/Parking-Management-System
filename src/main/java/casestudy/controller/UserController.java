@@ -1,7 +1,9 @@
 package casestudy.controller;
 
 import casestudy.database.DAO.UserDAO;
+import casestudy.database.DAO.UserRoleDAO;
 import casestudy.database.Entity.User;
+import casestudy.database.Entity.UserRole;
 import casestudy.formbean.RegisterFormBean;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +31,9 @@ import java.util.List;
 public class UserController {
     @Autowired
     private UserDAO userDAO;
+
+    @Autowired
+    private UserRoleDAO userRoleDAO;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
@@ -103,6 +108,13 @@ public class UserController {
         user.setPassword(password);
         userDAO.save(user);
 
+        //userRoleDAO.save(user);
+
+        Integer newUserId = userDAO.findByEmail(user.getEmail()).getId();
+        UserRole newUserRole = new UserRole();
+        newUserRole.setUserRole("USER");
+        newUserRole.setUserId(newUserId);
+        userRoleDAO.save(newUserRole);
 
 
 

@@ -1,6 +1,8 @@
 package casestudy.database.Entity;
 
+
 import lombok.*;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,21 +14,25 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "companies")
-public class Company {
+@Table(name = "reviews")
+public class Review {
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id", nullable = false)
-
     private Integer id;
 
-    @Column(name = "company_name", nullable = false, length = 45)
-    private String companyName;
+
+    @Column(name = "customer_reviews")
+    private String customerReviews;
 
 
 
-    @OneToMany(mappedBy = "company")
-    private List<ParkingSpot> parkingSpots = new ArrayList<>();
+
+    @ManyToOne
+    @JoinColumn(name = "company_id")
+    private Company company;
+
 
 
 }

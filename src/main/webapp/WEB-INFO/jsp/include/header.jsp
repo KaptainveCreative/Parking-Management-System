@@ -30,7 +30,8 @@
 
     <sec:authorize access="isAuthenticated()">
       <a href="/park/List">List your parking spot?</a>  |
-      <a href="/park/Search">Search</a>
+      <a href="/park/Search">Search</a> | &nbsp;
+        <a href="/park/Review">Feedback</a> | &nbsp;
       <a href="/login/logout">Logout  </a>  &nbsp;  &nbsp;  <span>Hello!</span>
         <%--    <p>Hello!</p>--%>
 
