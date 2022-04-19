@@ -38,6 +38,7 @@
         <td>${spot.date}</td>
         <td>${spot.zipcode}</td>
         <td>${spot.state}</td>
+        <td><a href="/park/Reserve">Reserve</a></td>
             <%--                    <td>${spot.companyName}</td>--%>
             <%--                    <td>${spot.company_id}</td>--%>
 
@@ -77,6 +78,8 @@
                     <td>${allSpots.date}</td>
                     <td>${allSpots.zipcode}</td>
                     <td>${allSpots.state}</td>
+                    <td><a href="/park/Reserve">Reserve</a></td>
+
 <%--                    <td>${spot.companyName}</td>--%>
 <%--                    <td>${spot.company_id}</td>--%>
 

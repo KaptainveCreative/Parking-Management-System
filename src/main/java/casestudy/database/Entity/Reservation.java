@@ -27,9 +27,9 @@ public class Reservation {
     @Column(name = "zipcode", nullable = false)
     private Integer zipcode;
 
-    @Column(name = "status", nullable = false, length = 45)
-    private String status;
-
+//    @Column(name = "status", nullable = false, length = 45)
+//    private String status;
+//
 
     //@DateTimeFormat(pattern = "yyyy-MM-dd")
     //@Temporal()
@@ -45,9 +45,9 @@ public class Reservation {
 
 
 
-
-    @Column(name = "confirmation_message", nullable = false, length = 100)
-    private String confirmationMessage;
+//
+//    @Column(name = "confirmation_message", nullable = false, length = 100)
+//    private String confirmationMessage;
 
 
 //    @Basic

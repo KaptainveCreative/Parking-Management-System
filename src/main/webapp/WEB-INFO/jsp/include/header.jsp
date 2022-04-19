@@ -71,13 +71,20 @@
                     </li>
 
                     <li class="nav-item">
+                        <a class="nav-link mx-2" href="/park/Reserve"><i class="fas fa-heart pe-2"></i> Reserve a spot</a>
+                    </li>
+
+                    <li class="nav-item">
                         <a class="nav-link mx-2" href="/park/Review"><i class="fas fa-heart pe-2"></i>Feedback</a>
                     </li>
+
 
                     <li class="nav-item">
                         <a class="nav-link mx-2" href="/login/logout"><i class="fas fa-heart pe-2"></i>Logout</a>
 
                     </li>
+
+
 
                     <li>
                         <span>Hello!</span>

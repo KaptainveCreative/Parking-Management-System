@@ -77,17 +77,19 @@ public class ListController {
         ParkingSpot parkingSpot = new ParkingSpot();
         Company company = new Company();
 
-            parkingSpot.setZipcode((form.getZipcode()));
-            parkingSpot.setPrice((form.getPrice()));
-            parkingSpot.setRating((form.getRating()));
-            parkingSpot.setStatus((form.getStatus()));
-            parkingSpot.setState((form.getState()));
-            parkingSpot.setQuantity((form.getQuantity()));
-            parkingSpot.setDate((new Date()));
-            company.setCompanyName(form.getCompanyName());
+        company.setCompanyName(form.getCompanyName());
+        companyDAO.save(company);
+            parkingSpot.setCompany(company);
 
-            parkingSpotDAO.save(parkingSpot);
-            companyDAO.save(company);
+        parkingSpot.setDate((new Date()));
+        parkingSpot.setZipcode((form.getZipcode()));
+        parkingSpot.setPrice((form.getPrice()));
+        parkingSpot.setRating((form.getRating()));
+        parkingSpot.setStatus((form.getStatus()));
+        parkingSpot.setState((form.getState()));
+        parkingSpot.setQuantity((form.getQuantity()));
+
+        parkingSpotDAO.save(parkingSpot);
 
 
 

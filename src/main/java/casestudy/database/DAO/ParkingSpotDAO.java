@@ -14,7 +14,7 @@ import java.util.List;
 public interface ParkingSpotDAO extends JpaRepository<ParkingSpot, Long> {
 
     //public User findBy(@Param("email") String email);
-
+    @Query(value = "select * from parkingspots", nativeQuery = true)
     public List<ParkingSpot> findAll();
 
 

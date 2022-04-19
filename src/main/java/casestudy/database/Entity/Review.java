@@ -22,7 +22,7 @@ public class Review {
     @Column(name = "id", nullable = false)
     private Integer id;
 
-
+    @Lob
     @Column(name = "customer_reviews")
     private String customerReviews;
 

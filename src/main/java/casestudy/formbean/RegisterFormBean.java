@@ -42,7 +42,7 @@ public class RegisterFormBean {
     /*------------------------------*/
 
     @Length(min=3, max=15, message = "Password must be between 3 and 15 characters")
-    @NotBlank ( message =  "Password is required")
+    @NotBlank ( message =  "Password 2is required")
     private String password;
     /*------------------------------*/
 

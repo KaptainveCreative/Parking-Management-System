@@ -82,9 +82,9 @@
         <div class="form-group">
             <label>Company Id </label>
             <div class="form-outline mb-4" >
-               <input type="text" id="form2Example18" class="form-control form-control-lg"  placeholder="See Above" name="company_id"/>
+               <input type="text" id="form2Example18" class="form-control form-control-lg"  placeholder="See Above" name="companyId"/>
             </div>
-            <textarea  class="form-control"  placeholder="Give us your thoughts" name="customer_reviews"></textarea>
+            <textarea  class="form-control"  placeholder="Give us your thoughts" name="customerReviews"></textarea>
         </div>
         <br>
         <div class="form-group">
