@@ -10,9 +10,8 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
+import javax.validation.constraints.*;
+
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -21,26 +20,29 @@ import java.util.Date;
 @ToString
 public class ListFormBean {
 
+
     private Integer id;
 
-    //@NotBlank(message="Zipcode field is required")
+    @Digits(message = "Zipcode field is required", integer = 5, fraction = 0)
+    @NotNull( message = "Zipcode field is required")
     private Integer zipcode;
 
-    //@NotBlank(message="Price field is required")
+    @NotNull(message="Price field is required")
     private BigDecimal price;
 
 
     private Integer rating;
 
-    //@NotBlank(message="Status field is required")
+    @NotEmpty(message="Status field is required")
     private String status;
 
-   // @NotBlank(message="State field is required")
+    @NotEmpty(message="State field is required")
     private String state;
 
-    //@NotBlank(message="Spot count field is required")
-    private int quantity;
+    @NotNull(message="Spot count field is required")
+    private Integer quantity;
 
+    @NotEmpty(message="You must provide the name of the spot to be addressed as")
     private String companyName;
 
 

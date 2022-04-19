@@ -36,6 +36,10 @@ public class ReviewController {
 
         ModelAndView response = new ModelAndView();
 
+        List<Review> allReviews = reviewDAO.findAll();
+
+
+        response.addObject("allReviews", allReviews);
 
         response.setViewName("/park/Review");
 
@@ -47,7 +51,7 @@ public class ReviewController {
 
 
     @GetMapping( "/park/ReviewAll")
-    public ModelAndView search( ) {
+    public ModelAndView showReviews( ) {
         ModelAndView response = new ModelAndView();
 
         response.setViewName("park/Review");
@@ -67,7 +71,7 @@ public class ReviewController {
 
     @RequestMapping(value = "/park/ReviewSubmit", method = {RequestMethod.POST,RequestMethod.GET })
 
-    public ModelAndView listSubmit(@Valid ReviewFormBean form) throws Exception {
+    public ModelAndView reviewSubmit(@Valid ReviewFormBean form) throws Exception {
         ModelAndView response = new ModelAndView();
         log.info(form.toString());
 
@@ -79,16 +83,41 @@ public class ReviewController {
         review.setCompany(company);
 
         review.setCustomerReviews(form.getCustomerReviews());
+        review.setCustomerName(form.getCustomerName());
 
         reviewDAO.save(review);
 
 //        companyDAO.save(company);
 
 
-        response.setViewName("/park/Review");
+        response.setViewName("redirect:/park/Review");
         return response;
 
     }
 
+
+//    @GetMapping(value = "/park/Review"/*, method = {RequestMethod.POST,RequestMethod.GET }*/)
+//
+//    public ModelAndView reviewReturn() throws Exception {
+//        ModelAndView response = new ModelAndView();
+//
+//        Company company = new Company();
+//
+////        company.getCompanyName();
+//
+//
+////                Review review = new Review();
+//
+//        List<Review> allReviews = reviewDAO.findAll();
+//
+//
+//        response.addObject("allReviews", allReviews);
+////        companyDAO.save(company);
+//
+//
+//        response.setViewName("/park/Review");
+//        return response;
+//
+//    }
 
     }

@@ -22,6 +22,10 @@ public class Review {
     @Column(name = "id", nullable = false)
     private Integer id;
 
+
+    @Column(name = "customer_name", nullable = false)
+    private String customerName;
+
     @Lob
     @Column(name = "customer_reviews")
     private String customerReviews;

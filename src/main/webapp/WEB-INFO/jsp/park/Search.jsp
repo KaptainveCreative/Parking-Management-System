@@ -62,11 +62,11 @@
                 <th>5 Scale Rating</th>
                 <th>Price for 1 Hour </th>
                 <th>Spots Open</th>
-                <th>Zipcode</th>
                 <th>Available as of</th>
+                <th>Zipcode</th>
                 <th>State</th>
 
-            </tr>
+    </tr>
 
             <c:forEach items="${allparkingSpots}" var="allSpots">
                 <tr scope="row">
@@ -78,7 +78,7 @@
                     <td>${allSpots.date}</td>
                     <td>${allSpots.zipcode}</td>
                     <td>${allSpots.state}</td>
-                    <td><a href="/park/Reserve">Reserve</a></td>
+                    <td><a href="/park/Reserve/${allSpots.zipcode}">Reserve</a></td>
 
 <%--                    <td>${spot.companyName}</td>--%>
 <%--                    <td>${spot.company_id}</td>--%>

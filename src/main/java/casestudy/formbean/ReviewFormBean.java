@@ -17,4 +17,6 @@ public class ReviewFormBean {
 
     private Integer companyId;
 
+    private String customerName;
+
 }

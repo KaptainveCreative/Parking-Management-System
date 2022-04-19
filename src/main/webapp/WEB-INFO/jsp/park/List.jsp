@@ -29,30 +29,33 @@
     <!-- company name input -->
     <div class="form-outline mb-4">
         <label class="form-label" for="zipcodeId">Enter spot nickname</label>
-        <input type="text" id="zipcodeId" class="form-control" name="companyName" <%--value="${form.zipcode}"--%>/>
+        <input type="text" id="zipcodeId" class="form-control" name="companyName"  value="${form.companyName}"/>
 
+               <c:forEach items="${bindingResult.getFieldErrors('companyName')}" var="error">
+           <div style="color: red;"> ${error.getDefaultMessage()} </div>
+       </c:forEach>
 
     <!-- Zipcode input -->
     <div class="form-outline mb-4">
-        <label class="form-label" for="zipcodeId">Enter the ZIP-Code for your parking spot </label>
-        <input type="text" id="zipcodeId" class="form-control" name="zipcode" <%--value="${form.zipcode}"--%> placeholder="e.g. 02155"/>
+        <label class="form-label" for="zipcodeId" >Enter the ZIP-Code for your parking spot </label>
+        <input type="text" id="zipcodeId" class="form-control" name="zipcode" value="${form.zipcode}" placeholder="e.g. 02155" />
 
- <%--       <c:forEach items="${bindingResult.getFieldErrors('zipcode')}" var="error">
+        <c:forEach items="${bindingResult.getFieldErrors('zipcode')}" var="error" >
             <div style="color: red;"> ${error.getDefaultMessage()} </div>
-        </c:forEach>--%>
+        </c:forEach>
     </div>
+
 
     <!-- price input -->
     <div class="form-outline mb-4">
         <label class="form-label" for="priceId">Enter your fee for 1 hr</label>
-        <input type="text" id="priceId" class="form-control" name="price"/>
+        <input type="text" id="priceId" class="form-control" name="price" value="${form.price}"/>
 
 
-        <%--value="${form.price}"--%>
-<%--
         <c:forEach items="${bindingResult.getFieldErrors('price')}" var="error">
             <div style="color: red;"> ${error.getDefaultMessage()} </div>
-        </c:forEach>--%>
+        </c:forEach>
+
     </div>
 
     <!-- Rating input -->
@@ -65,39 +68,36 @@
 
     <!-- status input -->
     <div class="form-outline mb-4">
-<%--        <label class="form-label" for="statusId">Available or Booked</label>--%>
-<%--        <input type="text" id="statusId" class="form-control"  name="status" >--%>
+
         <select name="status" id="status">
             <option>Select Status</option>
             <option>Available</option>
             <option>Booked</option>
         </select>
-        <%--value="${form.status}"--%>
 
-  <%--      <c:forEach items="${bindingResult.getFieldErrors('status')}" var="error">
-            <div style="color: red;"> ${error.getDefaultMessage()} </div>
-        </c:forEach>--%>
     </div>
 
 
     <!-- quantity input -->
     <div class="form-outline mb-4">
         <label class="form-label" for="quantityId">How many spots do you have to reserve</label>
-        <input type="text" id="quantityId" class="form-control" name="quantity" <%--value="${form.quantity}" --%>/>
+        <input type="text" id="quantityId" class="form-control" name="quantity" value="${form.quantity}" />
+
+        <c:forEach items="${bindingResult.getFieldErrors('quantity')}" var="error">
+            <div style="color: red;"> ${error.getDefaultMessage()} </div>
+        </c:forEach>
+
     </div>
 
-<%--    <c:forEach items="${bindingResult.getFieldErrors('quantity')}" var="error">--%>
-<%--        <div style="color: red;"> ${error.getDefaultMessage()} </div>--%>
-<%--    </c:forEach>--%>
 
     <!-- state input -->
     <div class="form-outline mb-4">
         <label class="form-label" for="stateId">Enter which state the spot is there for  </label>
-        <input type="text" id="stateId" class="form-control" name="state" <%--value="${form.state}"--%> maxlength="2" placeholder="e.g. MN"/>
+        <input type="text" id="stateId" class="form-control" name="state" value="${form.state}" maxlength="2" placeholder="e.g. MN"/>
 
-<%--        <c:forEach items="${bindingResult.getFieldErrors('state')}" var="error">
+        <c:forEach items="${bindingResult.getFieldErrors('state')}" var="error">
             <div style="color: red;"> ${error.getDefaultMessage()} </div>
-        </c:forEach>--%>
+        </c:forEach>
     </div>
     <!-- 2 column grid layout for inline styling -->
     <div class="row mb-4">

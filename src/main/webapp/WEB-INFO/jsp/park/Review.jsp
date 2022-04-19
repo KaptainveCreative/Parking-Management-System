@@ -84,44 +84,83 @@
             <div class="form-outline mb-4" >
                <input type="text" id="form2Example18" class="form-control form-control-lg"  placeholder="See Above" name="companyId"/>
             </div>
+            <label>Customer name </label>
+            <div class="form-outline mb-4" >
+                <input type="text" id="form2Example17" class="form-control form-control-lg"  placeholder="" name="customerName"/>
+            </div>
             <textarea  class="form-control"  placeholder="Give us your thoughts" name="customerReviews"></textarea>
         </div>
         <br>
         <div class="form-group">
+
             <button class="btn btn-primary btn-sm" type="submit"> Submit Comment </button>
+
+
+<%--            <c:if test="${form.customerReviews.length > 36}">--%>
+<%--                <h1>Thank you for leaving a review </h1>--%>
+<%--            </c:if>--%>
         </div>
     </form>
 </div>
 
 
 <%--------------------------------------------------------------------------------------%>
-<div class="container">
-    <div class="mgb-40 padb-30 auto-invert line-b-4 align-center">
-        <h4 class="font-cond-l fg-accent lts-md mgb-10" contenteditable="false">Not Yet Convinced?</h4>
-        <h1 class="font-cond-b fg-text-d lts-md fs-300 fs-300-xs no-mg" contenteditable="false">Read Customer Reviews</h1>
-    </div>
-    <ul class="hash-list cols-3 cols-1-xs pad-30-all align-center text-sm">
-        <li>
-            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="wpx-100 img-round mgb-20" title="" alt="" data-edit="false" data-editor="field" data-field="src[Image Path]; title[Image Title]; alt[Image Alternate Text]">
-            <p class="fs-110 font-cond-l" contenteditable="false">" Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae. "</p>
-            <h5 class="font-cond mgb-5 fg-text-d fs-130" contenteditable="false">Martha Stewart</h5>
-            <small class="font-cond case-u lts-sm fs-80 fg-text-l" contenteditable="false">Business Woman - New York</small>
-        </li>
-        <li>
-            <img src="https://bootdey.com/img/Content/avatar/avatar4.png" class="wpx-100 img-round mgb-20" title="" alt="" data-edit="false" data-editor="field" data-field="src[Image Path]; title[Image Title]; alt[Image Alternate Text]">
-            <p class="fs-110 font-cond-l" contenteditable="false">" Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae. "</p>
-            <h5 class="font-cond mgb-5 fg-text-d fs-130" contenteditable="false">Ariana Menage</h5>
-            <small class="font-cond case-u lts-sm fs-80 fg-text-l" contenteditable="false">Recording Artist - Los Angeles</small>
-        </li>
-        <li>
-            <img src="https://bootdey.com/img/Content/avatar/avatar5.png" class="wpx-100 img-round mgb-20" title="" alt="" data-edit="false" data-editor="field" data-field="src[Image Path]; title[Image Title]; alt[Image Alternate Text]">
-            <p class="fs-110 font-cond-l" contenteditable="false">" Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae. "</p>
-            <h5 class="font-cond mgb-5 fg-text-d fs-130" contenteditable="false">Sean Carter</h5>
-            <small class="font-cond case-u lts-sm fs-80 fg-text-l" contenteditable="false">Fund Manager - Chicago</small>
-        </li>
-    </ul>
-</div>
+<%--<div class="container">--%>
+<%--    <div class="mgb-40 padb-30 auto-invert line-b-4 align-center">--%>
+<%--        <h4 class="font-cond-l fg-accent lts-md mgb-10" contenteditable="false">Not Yet Convinced?</h4>--%>
+<%--        <h1 class="font-cond-b fg-text-d lts-md fs-300 fs-300-xs no-mg" contenteditable="false">Read Customer Reviews</h1>--%>
+<%--    </div>--%>
+<%--    <ul class="hash-list cols-3 cols-1-xs pad-30-all align-center text-sm">--%>
+<%--        <li>--%>
+<%--            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="wpx-100 img-round mgb-20" title="" alt="" data-edit="false" data-editor="field" data-field="src[Image Path]; title[Image Title]; alt[Image Alternate Text]">--%>
+<%--            <p class="fs-110 font-cond-l" contenteditable="false">" Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae. "</p>--%>
+<%--            <h5 class="font-cond mgb-5 fg-text-d fs-130" contenteditable="false">Martha Stewart</h5>--%>
+<%--            <small class="font-cond case-u lts-sm fs-80 fg-text-l" contenteditable="false">Business Woman - New York</small>--%>
+<%--        </li>--%>
+<%--        <li>--%>
+<%--            <img src="https://bootdey.com/img/Content/avatar/avatar4.png" class="wpx-100 img-round mgb-20" title="" alt="" data-edit="false" data-editor="field" data-field="src[Image Path]; title[Image Title]; alt[Image Alternate Text]">--%>
+<%--            <p class="fs-110 font-cond-l" contenteditable="false">" Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae. "</p>--%>
+<%--            <h5 class="font-cond mgb-5 fg-text-d fs-130" contenteditable="false">Ariana Menage</h5>--%>
+<%--            <small class="font-cond case-u lts-sm fs-80 fg-text-l" contenteditable="false">Recording Artist - Los Angeles</small>--%>
+<%--        </li>--%>
+<%--        <li>--%>
+<%--            <img src="https://bootdey.com/img/Content/avatar/avatar5.png" class="wpx-100 img-round mgb-20" title="" alt="" data-edit="false" data-editor="field" data-field="src[Image Path]; title[Image Title]; alt[Image Alternate Text]">--%>
+<%--            <p class="fs-110 font-cond-l" contenteditable="false">" Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae. "</p>--%>
+<%--            <h5 class="font-cond mgb-5 fg-text-d fs-130" contenteditable="false">Sean Carter</h5>--%>
+<%--            <small class="font-cond case-u lts-sm fs-80 fg-text-l" contenteditable="false">Fund Manager - Chicago</small>--%>
+<%--        </li>--%>
+<%--    </ul>--%>
+<%--</div>--%>
 
+
+
+
+<table class="table">
+    <tr scope="row">
+
+
+        <th> Customer Name</th>
+        <th> Feedback</th>
+        <th> Parking Facilitator</th>
+
+
+
+    </tr>
+
+    <c:forEach items="${allReviews}" var="review">
+        <tr scope="row">
+            <td>${review.customerName}</td>
+            <td>${review.customerReviews}</td>
+            <td>${review.company.companyName}</td>
+
+                <%--                    <td>${spot.companyName}</td>--%>
+                <%--                    <td>${spot.company_id}</td>--%>
+
+        </tr>
+
+    </c:forEach>
+
+</table>
 
 </body>
 </html>
