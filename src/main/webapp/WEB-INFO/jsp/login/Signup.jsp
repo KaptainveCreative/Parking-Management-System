@@ -13,11 +13,14 @@
 
 
 <%--    <link href="<c:url value="/pub/css/signup.css" />" rel="stylesheet">--%>
-    <link rel="stylesheet" href="../../../pub/css/signup.css">
+
+    <link rel="stylesheet" href="../../../pub/css/signup.css"> <%--CSS Link--%>
+    <script src="../../../pub/js/script.js" defer></script> <%--Js Link--%>
+
 
 </head>
 <body>
-<form action="/login/SignupSubmit"    method="post">
+<form action="/login/SignupSubmit"  id="signUpForm"   method="post">
 
 
 <div class="sign-up-form">
@@ -65,18 +68,20 @@
     <br>
     <br>
 
-    <input  class="input-box" type="password" name="password" id="passwordId" value="${form.password}" placeholder=" Password ">
-    <v:forEach items="${bindingResult.getFieldErrors('password')}" var="error">
-        <div style="color: red;"> ${error.getDefaultMessage()} </div>
-    </v:forEach>
+    <input  class="input-box" type="password" name="password" id="password" value="<%--${form.password}--%>" placeholder=" Password ">
+    <p id="PasswordErrorMessage"></p>
+<%--    <v:forEach items="${bindingResult.getFieldErrors('password')}" var="error">--%>
+<%--        <div style="color: red;"> ${error.getDefaultMessage()} </div>--%>
+<%--    </v:forEach>--%>
 
     <br>
     <br>
 
-    <input class="input-box" type="password" name="confirmPassword" id="confirmPasswordId" value="${form.confirmPassword}" placeholder=" Confirm Password ">
-    <v:forEach items="${bindingResult.getFieldErrors('confirmPassword')}" var="error">
-        <div style="color: red;"> ${error.getDefaultMessage()} </div>
-    </v:forEach>
+    <input class="input-box" type="password" name="confirmPassword" id="confirmPassword" value="<%--${form.confirmPassword}--%>" placeholder=" Confirm Password ">
+    <p id="ConfirmPasswordErrorMessage"></p>
+<%--    <v:forEach items="${bindingResult.getFieldErrors('confirmPassword')}" var="error">--%>
+<%--        <div style="color: red;"> ${error.getDefaultMessage()} </div>--%>
+<%--    </v:forEach>--%>
     <br>
     <br>
 

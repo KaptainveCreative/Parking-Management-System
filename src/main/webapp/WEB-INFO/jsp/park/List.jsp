@@ -83,7 +83,7 @@
         <label class="form-label" for="quantityId">How many spots do you have to reserve</label>
         <input type="text" id="quantityId" class="form-control" name="quantity" value="${form.quantity}" />
 
-        <c:forEach items="${bindingResult.getFieldErrors('quantity')}" var="error">
+        <c:forEach items="${bindingResult.getFieldErrors('quantity')}" var="error">z
             <div style="color: red;"> ${error.getDefaultMessage()} </div>
         </c:forEach>
 

@@ -1,3 +1,13 @@
 .navbar-light .navbar-nav .nav-link {
     color: #000;
 }
+
+#userName {
+    border-radius: 25%;
+    background-color: black;
+    opacity: 90%;
+    align-content: center;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}

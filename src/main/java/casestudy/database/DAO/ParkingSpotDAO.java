@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ParkingSpotDAO extends JpaRepository<ParkingSpot, Long> {
+public interface ParkingSpotDAO extends JpaRepository<ParkingSpot, Integer> {
 
     //public User findBy(@Param("email") String email);
     @Query(value = "select * from parkingspots", nativeQuery = true)

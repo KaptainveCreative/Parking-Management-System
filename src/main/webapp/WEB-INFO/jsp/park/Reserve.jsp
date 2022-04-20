@@ -16,20 +16,27 @@
         <h1>Reservation page</h1>
 <form action="">
         <!-- zipcode input -->
-        <div class="form-outline mb-4">
-            <label class="form-label" for="zipcodeId">Enter the ZIP-Code the parking spot you would like to reserve  </label>
-            <input type="text" id="zipcodeId" class="form-control" name="zipcode" <%--value="${form.zipcode}"--%> placeholder="e.g. 02155" maxlength="5"/>
+<%--        <div class="form-outline mb-4">--%>
+<%--            <label class="form-label" for="zipcodeId">Enter the ZIP-Code the parking spot you would like to reserve  </label>--%>
+<%--            <input type="text" id="zipcodeId" class="form-control" name="zipcode" &lt;%&ndash;value="${form.zipcode}"&ndash;%&gt; placeholder="e.g. 02155" maxlength="5"/>--%>
 
-        </div>
+<%--        </div>--%>
 
-        <!-- 2 column grid layout for inline styling -->
+        <!-- time and date-->
         <div class="row mb-4">
             <label class="form-label" for="dateId">Pick the date and time  </label>
             <input type="datetime-local" id="dateId" class="form-control" name="date" <%--value="${form.zipcode}"--%> placeholder="e.g. 02155" maxlength="5"/>
 
         </div>
 
-        <!-- Submit button -->
+
+    <div class="row mb-4">
+        <label class="form-label" for="quantityId"> How many spots do you need?  </label>
+        <input type="datetime-local" id="quantityId" class="form-control" name="quantity" <%--value="${form.zipcode}"--%> placeholder="e.g. 02155" maxlength="5"/>
+
+    </div>
+
+    <!-- Submit button -->
 
 </form>
 

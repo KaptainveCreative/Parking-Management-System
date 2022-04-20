@@ -88,7 +88,7 @@
 
 
 
-                    <li>
+                    <li id="userName">
                         <span>Hello!</span>
                         <sec:authentication property="principal.username"/>
                     </li>
@@ -96,15 +96,13 @@
 
 </sec:authorize>
 
-
-
-
-
                </ul>
             </div>
         </div>
     </nav>
     <!-- Navbar -->
+
+
 
 
     <br><br><br>

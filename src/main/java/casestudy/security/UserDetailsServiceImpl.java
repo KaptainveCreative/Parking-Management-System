@@ -1,10 +1,13 @@
 package casestudy.security;
 import casestudy.database.DAO.UserDAO;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -16,6 +19,8 @@ import casestudy.database.DAO.UserRoleDAO;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+
+@Slf4j
 @Component
 public class UserDetailsServiceImpl implements UserDetailsService {
     public static final Logger LOG = LoggerFactory.getLogger(UserDetailsServiceImpl.class);
@@ -29,6 +34,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         if (user == null) {
             throw new UsernameNotFoundException("Username '" + username + "' not found in database");
         }
+
         List<UserRole> userRoles = userRoleDao.findByUserId(user.getId());
         // check the account status
         boolean accountIsEnabled = true;
@@ -43,11 +49,25 @@ public class UserDetailsServiceImpl implements UserDetailsService {
                 accountIsEnabled, accountNonExpired, credentialsNonExpired, accountNonLocked,
                 springRoles);
     }
+
+
     private Collection<? extends GrantedAuthority> buildGrantAuthorities(List<UserRole> userRoles) {
         List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
         for (UserRole role : userRoles) {
             authorities.add(new SimpleGrantedAuthority(role.getUserRole()));
         }
         return authorities;
+    }
+
+
+
+    public User getCurrentUser () { // return used already logged
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+
+
+        return userDao.findByEmail(auth.getName());
+
+
     }
 }

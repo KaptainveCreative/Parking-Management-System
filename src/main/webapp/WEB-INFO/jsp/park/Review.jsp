@@ -9,14 +9,14 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="../../../pub/css/reviewpage.css">
 </head>
 <body>
 
 
-<h1>This is a review page</h1>
 
-<h1> Here is a list of the companies we are contracted with. We would love to hear your thoughts. Please feel free to leave an honest review based on your experience </h1>
+
+<h2> Here is a list of the companies we are contracted with. We would love to hear your thoughts. Please feel free to leave an honest review based on your experience </h2>
 
 
 <form action="/park/ReviewAll" method="get" >
@@ -78,7 +78,7 @@
                                  <a href="#"><i class="icofont-ui-rating icofont-2x"></i></a>
                                  </span>
     </div>
-    <form action="/park/ReviewSubmit" method="POST">
+    <form action="/park/ReviewSubmit" method="POST"  id="form">
         <div class="form-group">
             <label>Company Id </label>
             <div class="form-outline mb-4" >
