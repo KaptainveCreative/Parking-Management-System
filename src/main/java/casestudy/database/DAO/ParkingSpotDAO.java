@@ -18,6 +18,9 @@ public interface ParkingSpotDAO extends JpaRepository<ParkingSpot, Integer> {
     public List<ParkingSpot> findAll();
 
 
+    public List<ParkingSpot> findByStatus( String status);
+
+
 
 
     //    I can't seem to grab the company name using this query

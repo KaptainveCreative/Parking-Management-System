@@ -87,7 +87,7 @@ public class ListController {
         parkingSpot.setRating((form.getRating()));
         parkingSpot.setStatus((form.getStatus()));
         parkingSpot.setState((form.getState()));
-        parkingSpot.setQuantity((form.getQuantity()));
+        parkingSpot.setQuantity(1);
 
         parkingSpotDAO.save(parkingSpot);
 

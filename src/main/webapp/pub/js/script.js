@@ -13,7 +13,7 @@ function validatePassword(){
 
 
 
-    if ( passwordText=== ""){
+    if ( passwordText === ""){
 
         pTag.innerHTML = "Password field cannot be empty"
         pTag.style.color = "red";

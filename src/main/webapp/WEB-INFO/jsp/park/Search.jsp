@@ -21,7 +21,7 @@
         <th>Status</th>
         <th>5 Scale Rating</th>
         <th>Price for 1 Hour </th>
-        <th>Spots Open</th>
+<%--        <th>Spots Open</th>--%>
         <th>Zipcode</th>
         <th>Available as of</th>
         <th>State</th>
@@ -34,7 +34,7 @@
         <td>${spot.status}</td>
         <td>${spot.rating}</td>
         <td>${spot.price}</td>
-        <td>${spot.quantity}</td>
+<%--        <td>${spot.quantity}</td>--%>
         <td>${spot.date}</td>
         <td>${spot.zipcode}</td>
         <td>${spot.state}</td>
@@ -61,7 +61,7 @@
                 <th>Status</th>
                 <th>5 Scale Rating</th>
                 <th>Price for 1 Hour </th>
-                <th>Spots Open</th>
+<%--                <th>Spots Open</th>--%>
                 <th>Available as of</th>
                 <th>Zipcode</th>
                 <th>State</th>
@@ -74,7 +74,7 @@
                     <td>${allSpots.status}</td>
                     <td>${allSpots.rating}</td>
                     <td>${allSpots.price}</td>
-                    <td>${allSpots.quantity}</td>
+<%--                    <td>${allSpots.quantity}</td>--%>
                     <td>${allSpots.date}</td>
                     <td>${allSpots.zipcode}</td>
                     <td>${allSpots.state}</td>

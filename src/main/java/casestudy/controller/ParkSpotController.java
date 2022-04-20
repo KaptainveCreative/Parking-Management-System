@@ -36,7 +36,7 @@ public class ParkSpotController{
             response.addObject("parkingSpots", parkingSpots);
 
 
-            List<ParkingSpot> allparkingSpots = parkingSpotDAO.findAll(); // finding All spots
+            List<ParkingSpot> allparkingSpots = parkingSpotDAO.findByStatus("Available"); // When you reserve a spot, the status changes to not available
 
 
             response.addObject("allparkingSpots", allparkingSpots);

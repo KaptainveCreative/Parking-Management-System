@@ -13,7 +13,12 @@
 
 </head>
 
-<c:if test="${hideForm}">
+
+
+<body>
+
+
+<c:if test="${!hideForm}">
 
     <form action="/park/Reserve/${parkingSpotId}" method="post">
 
@@ -32,8 +37,9 @@
     </form>
 
 </c:if>
-<body>
-<h1>Reservation page</h1>
+
+
+<h1> Current Reservations</h1>
 
 
 <table class="table">
@@ -42,17 +48,17 @@
 
     </tr>
 
-    <c:forEach items="${allparkingSpots}" var="allSpots">
+    <c:forEach items="${reservationList}" var="reserve">
     <tr scope="row">
-        <td>${allSpots.company.companyName}</td>
-        <td>${allSpots.status}</td>
-        <td>${allSpots.rating}</td>
-        <td>${allSpots.price}</td>
-        <td>${allSpots.quantity}</td>
-        <td>${allSpots.date}</td>
-        <td>${allSpots.zipcode}</td>
-        <td>${allSpots.state}</td>
-        <td><a href="/park/Reserve/${allSpots.id}">Reserve</a></td>
+        <td>${reserve.parkingspot.company.companyName}</td>
+        <td>${reserve.user.firstName}</td>
+
+        <td>${reserve.parkingspot.price}</td>
+        <td>${reserve.parkingspot.quantity}</td>
+        <td>${reserve.date}</td>
+        <td>${reserve.zipcode}</td>
+        <td>${reserve.parkingspot.state}</td>
+<%--        <td><a href="/park/Reserve/${reserve.id}">Reserve</a></td>--%>
 
             <%--                    <td>${spot.companyName}</td>--%>
             <%--                    <td>${spot.company_id}</td>--%>
