@@ -38,7 +38,7 @@
         <td>${spot.date}</td>
         <td>${spot.zipcode}</td>
         <td>${spot.state}</td>
-        <td><a href="/park/Reserve">Reserve</a></td>
+        <td><a href="/park/Reserve/${spot.id}">Reserve</a></td>
             <%--                    <td>${spot.companyName}</td>--%>
             <%--                    <td>${spot.company_id}</td>--%>
 

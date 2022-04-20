@@ -46,18 +46,15 @@ public class User {
     @Temporal( TemporalType.TIMESTAMP)
     private Date date;
 
-//    @Column(name = "date", nullable = false)
-////    @Temporal(TemporalType.DATE)
-//    @Temporal( TemporalType.TIMESTAMP)
-//    private Date date;
+
 
 
     @Basic
     @Column(name = "password", nullable = false, length = 45)
     private String password;
 
-//    @OneToMany(mappedBy = "user")
-//    private List<Reservation> reservations = new ArrayList<>();
+    @OneToMany(mappedBy = "user")
+    private List<Reservation> reservations = new ArrayList<>();
 
 
 }

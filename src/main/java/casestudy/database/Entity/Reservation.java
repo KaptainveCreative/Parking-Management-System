@@ -27,13 +27,6 @@ public class Reservation {
     @Column(name = "zipcode", nullable = false)
     private Integer zipcode;
 
-//    @Column(name = "status", nullable = false, length = 45)
-//    private String status;
-//
-
-    //@DateTimeFormat(pattern = "yyyy-MM-dd")
-    //@Temporal()
-    //    @Temporal(TemporalType.DATE)
 
 
     @Basic
@@ -45,33 +38,18 @@ public class Reservation {
 
 
 
-//
-//    @Column(name = "confirmation_message", nullable = false, length = 100)
-//    private String confirmationMessage;
-
-
-//    @Basic
-//    @Column(name = "users_id", nullable = false)
-//    private Integer usersId;
-
-
-//    @Basic
-//    @Column(name = "parkingspots_id", nullable = false)
-//    private Integer parkingspotsId;
-
-
+    @ToString.Exclude
     @ManyToOne ( fetch = FetchType.LAZY)
     @JoinColumn(name = "users_id", referencedColumnName = "id", nullable = false)
     private User user;
 
 
+
+    @ToString.Exclude
     @ManyToOne ( fetch = FetchType.LAZY)
     @JoinColumn(name = "parkingspots_id", referencedColumnName = "id", nullable = false)
     private ParkingSpot parkingspot;
 
-//    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-//    @JoinColumn(name = "parkingspots_id", nullable = false)
-//    private ParkingSpot parkingSpot;
 
 
 }
