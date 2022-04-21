@@ -13,3 +13,7 @@ Main tools used
   * JSTL was used to work through conditional and to link to other pages
   * MariaDB was the main database used and MySQL Workbench was used for management and querying
 
+![image](https://user-images.githubusercontent.com/94082410/164548974-a1cf1945-b1f9-4c94-bd75-748108af4931.png)
+
+
+
