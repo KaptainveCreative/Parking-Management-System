@@ -93,7 +93,7 @@ public class ListController {
 
 
 
-        response.setViewName("/park/Search");
+        response.setViewName("redirect:/park/Search");
         return response;
 
     }

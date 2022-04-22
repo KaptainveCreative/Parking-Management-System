@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <jsp:include page="../include/header.jsp" />
 
 <!doctype html>
@@ -19,15 +19,15 @@
 <h2> Here is a list of the companies we are contracted with. We would love to hear your thoughts. Please feel free to leave an honest review based on your experience </h2>
 
 
-<form action="/park/ReviewAll" method="get" >
-<%--    We collaborate with companies across many states following states. Here are the states we are working with this calendar year ( MN, NY, CA,IL, DC, CO,TX, NEB, GA, AZ )--%>
-<%--    <br>--%>
-<%--    Search by state's acronym.--%>
-<%--    <input type="text" name="state" id="statusid">--%>
-    <button type="submit" >Show List </button>
+<%--<form action="/park/ReviewAll" method="get" >--%>
+<%--&lt;%&ndash;    We collaborate with companies across many states following states. Here are the states we are working with this calendar year ( MN, NY, CA,IL, DC, CO,TX, NEB, GA, AZ )&ndash;%&gt;--%>
+<%--&lt;%&ndash;    <br>&ndash;%&gt;--%>
+<%--&lt;%&ndash;    Search by state's acronym.&ndash;%&gt;--%>
+<%--&lt;%&ndash;    <input type="text" name="state" id="statusid">&ndash;%&gt;--%>
+<%--    <button type="submit" >Show List </button>--%>
 
-    <br>
-</form>
+<%--    <br>--%>
+<%--</form>--%>
 
 <table class="table">
     <tr scope="row">
@@ -52,8 +52,8 @@
             <td>${allSpots.rating}</td>
             <td>${allSpots.price}</td>
             <td>${allSpots.quantity}</td>
-            <td>${allSpots.date}</td>
             <td>${allSpots.zipcode}</td>
+            <td>${allSpots.date}</td>
             <td>${allSpots.state}</td>
                 <%--                    <td>${spot.companyName}</td>--%>
                 <%--                    <td>${spot.company_id}</td>--%>
@@ -153,8 +153,15 @@
             <td>${review.customerReviews}</td>
             <td>${review.company.companyName}</td>
 
-                <%--                    <td>${spot.companyName}</td>--%>
-                <%--                    <td>${spot.company_id}</td>--%>
+
+            <sec:authorize access="hasAuthority('ADMIN')">
+                <td>
+                    <form action="/park/Review/${review.id}" method="post">
+                        <button type="submit">Delete</button>
+                    </form>
+
+                </td>
+            </sec:authorize>
 
         </tr>
 

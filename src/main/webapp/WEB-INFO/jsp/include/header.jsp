@@ -69,11 +69,11 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link mx-2" href="/park/Search"><i class="fas fa-bell pe-2"></i>Search</a>
+                        <a class="nav-link mx-2" href="/park/Search"><i class="fas fa-bell pe-2"></i>Search and Reserve</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link mx-2" href="/park/Reserve"><i class="fas fa-heart pe-2"></i> Reserve a spot</a>
+                        <a class="nav-link mx-2" href="/park/Reserve"><i class="fas fa-heart pe-2"></i> Current Reservations </a>
                     </li>
 
                     <li class="nav-item">

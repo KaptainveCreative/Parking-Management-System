@@ -39,7 +39,7 @@ public class ListFormBean {
     @NotEmpty(message="State field is required")
     private String state;
 
-    @NotNull(message="Spot count field is required")
+    //@NotNull(message="Spot count field is required")
     private Integer quantity;
 
     @NotEmpty(message="You must provide the name of the spot to be addressed as")

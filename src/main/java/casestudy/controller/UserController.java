@@ -71,6 +71,7 @@ public class UserController {
 
         log.info(form.toString());
 
+        log.debug(form.toString());
         response.setViewName("login/Signup");
 
 

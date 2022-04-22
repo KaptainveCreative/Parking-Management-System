@@ -4,6 +4,7 @@ import casestudy.database.Entity.ParkingSpot;
 import casestudy.database.Entity.Review;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
@@ -14,8 +15,10 @@ public interface ReviewDAO extends JpaRepository<Review, Integer> {
     //@Query(value = "select u from reviews u", nativeQuery = false)
     public List<Review> findAll();
 
-    //@Query("select")
-//    public List<Review> getAllCustomerReviews();
+
+
+    //public void deleteById(ID id);
+
 
 
 

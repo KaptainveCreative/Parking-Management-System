@@ -3,6 +3,7 @@ package casestudy.controller;
 
 import casestudy.database.DAO.ParkingSpotDAO;
 import casestudy.database.DAO.ReserveDAO;
+import casestudy.database.DAO.UserDAO;
 import casestudy.database.Entity.ParkingSpot;
 import casestudy.database.Entity.Reservation;
 import casestudy.database.Entity.User;
@@ -10,6 +11,8 @@ import casestudy.security.UserDetailsServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -21,6 +24,8 @@ import java.util.List;
 @Controller
 public class ReserveController {
 
+    @Autowired
+    private UserDAO userDAO;
 
     @Autowired
     UserDetailsServiceImpl userService;
@@ -65,7 +70,16 @@ public class ReserveController {
     //@Date_TimeFormat(iso = DateTimeFormat.ISO.DATE) Date date)
     public String reserveSpot(@PathVariable Integer parkingSpotId, @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")  Date date) throws Exception {
 
+        log.debug("The current logged in user");
 
+
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = authentication.getName();
+        User userObj = userDAO.findByEmail(username);
+        log.info(userObj.toString());
+
+
+            User user = new User();
         ParkingSpot parkingSpot = parkingSpotDAO.getById(parkingSpotId); //getting the entity from the database using the id so you can set the relationship
         parkingSpot.setStatus("Not Available");
         // 1 - Grab the id and map it to the database
@@ -78,18 +92,10 @@ public class ReserveController {
 
         reserve.setUser(userService.getCurrentUser());
 
+
          reserveDAO.save(reserve);
 
 
-
-        // 2 - update the quantity for both the total count and for what the user is reserving
-
-
-
-
-
-
-        // 3 - Have a join query that does show Quantity, time, and zipcode of that particular spot
 
 
         return "redirect:/park/Search";

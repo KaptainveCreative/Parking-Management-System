@@ -46,15 +46,24 @@
     <tr scope="row">
 
 
+        <th>Parking Spot </th>
+        <th>Customer Name</th>
+        <th>Charge</th>
+        <th>Scheduled date</th>
+        <th>Zipcode </th>
+        <th>State</th>
+
+
+
     </tr>
 
     <c:forEach items="${reservationList}" var="reserve">
     <tr scope="row">
         <td>${reserve.parkingspot.company.companyName}</td>
-        <td>${reserve.user.firstName}</td>
+        <td>${reserve.user.firstName} ${reserve.user.lastName} </td>
 
-        <td>${reserve.parkingspot.price}</td>
-        <td>${reserve.parkingspot.quantity}</td>
+        <td>${reserve.parkingspot.price} </td>
+<%--        <td>${reserve.parkingspot.quantity}</td>--%>
         <td>${reserve.date}</td>
         <td>${reserve.zipcode}</td>
         <td>${reserve.parkingspot.state}</td>

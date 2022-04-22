@@ -70,7 +70,6 @@
     <div class="form-outline mb-4">
 
         <select name="status" id="status">
-            <option>Select Status</option>
             <option>Available</option>
             <option>Booked</option>
         </select>
@@ -78,14 +77,14 @@
     </div>
 
 
-    <!-- quantity input -->
+<%--    <!-- quantity input -->--%>
 <%--    <div class="form-outline mb-4">--%>
-<%--        <label class="form-label" for="quantityId">How many spots do you have to reserve</label>--%>
-<%--        <input type="hidden" id="quantityId" class="form-control" name="quantity" value="${form.quantity}"  />--%>
+<%--&lt;%&ndash;        <label class="form-label" for="quantityId">How many spots do you have to reserve</label>&ndash;%&gt;--%>
+<%--&lt;%&ndash;        <input type="hidden" id="quantityId" class="form-control" name="quantity" value="${form.quantity}"  />&ndash;%&gt;--%>
 
-<%--        <c:forEach items="${bindingResult.getFieldErrors('quantity')}" var="error">z--%>
-<%--            <div style="color: red;"> ${error.getDefaultMessage()} </div>--%>
-<%--        </c:forEach>--%>
+<%--&lt;%&ndash;        <c:forEach items="${bindingResult.getFieldErrors('quantity')}" var="error">z&ndash;%&gt;--%>
+<%--&lt;%&ndash;            <div style="color: red;"> ${error.getDefaultMessage()} </div>&ndash;%&gt;--%>
+<%--&lt;%&ndash;        </c:forEach>&ndash;%&gt;--%>
 
 <%--    </div>--%>
 
