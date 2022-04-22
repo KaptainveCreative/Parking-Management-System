@@ -83,28 +83,29 @@ public class ReviewController {
 
      @PreAuthorize("hasAuthority('ADMIN')")
     @PostMapping( "/park/Review/{id}")
-    public ModelAndView deleteReviews(@PathVariable Integer id ) {
-        ModelAndView response = new ModelAndView();
+    public String deleteReviews(@PathVariable Integer id ) {
+     //   ModelAndView response = new ModelAndView();
 
-        response.setViewName("park/Review");
+        //response.setViewName("park/Review");
 
 
         // This method will populate the all the companies and let the user giver a review using the id
 
          Review deleteReview = reviewDAO.getById(id); // finding All spots
-         log.info(id.toString());
+         //log.info(id.toString());
 
          reviewDAO.deleteById(id);
-         log.info(deleteReview.toString());
+         //log.info(deleteReview.toString());
 
 
 
 
-       // response.addObject("deleteReview", deleteReview);
+        //response.addObject("deleteReview", deleteReview);
 
-        response.setViewName("redirect:/park/Review");
+        //response.setViewName("redirect:/park/Review");
 
-        return response;
+        return "redirect:/park/Review";
+
     }
 
 

@@ -26,6 +26,7 @@ public class Company {
 
 
     @OneToMany(mappedBy = "company")
+    @ToString.Exclude
     private List<ParkingSpot> parkingSpots = new ArrayList<>();
 
 

@@ -62,6 +62,7 @@ public class ParkingSpot {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "company_id", nullable = false)
+    @ToString.Exclude
     private Company company;
 
 }

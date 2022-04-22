@@ -33,6 +33,7 @@ public class Review {
 
 
 
+    @ToString.Exclude
     @ManyToOne
     @JoinColumn(name = "company_id")
     private Company company;
