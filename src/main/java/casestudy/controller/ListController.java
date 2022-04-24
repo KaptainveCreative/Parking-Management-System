@@ -45,7 +45,7 @@ public class ListController {
 
     }
 
-    @RequestMapping(value = "/park/ListSubmit", method = {RequestMethod.POST,RequestMethod.GET })
+    @RequestMapping(value = "/park/ListSubmit", method = {RequestMethod.POST, RequestMethod.GET})
 
     public ModelAndView listSubmit(@Valid ListFormBean form, BindingResult bindingResult) throws Exception {
         ModelAndView response = new ModelAndView();
@@ -56,7 +56,7 @@ public class ListController {
             for (ObjectError error : bindingResult.getAllErrors()) {
                 errorMessages.add(error.getDefaultMessage());
                 //errors.put(((FieldError) error).getField(), error.getDefaultMessage());
-                log.info( ((FieldError) error).getField() + " " + error.getDefaultMessage() )   ;
+                log.info(((FieldError) error).getField() + " " + error.getDefaultMessage());
             }
 
             response.addObject("form", form);
@@ -72,14 +72,14 @@ public class ListController {
 
 
 
-/*-------------------------------------------------------------------*/
+        /*-------------------------------------------------------------------*/
 
         ParkingSpot parkingSpot = new ParkingSpot();
         Company company = new Company();
 
         company.setCompanyName(form.getCompanyName());
         companyDAO.save(company);
-            parkingSpot.setCompany(company);
+        parkingSpot.setCompany(company);
 
         parkingSpot.setDate((new Date()));
         parkingSpot.setZipcode((form.getZipcode()));
@@ -90,7 +90,6 @@ public class ListController {
         parkingSpot.setQuantity(1);
 
         parkingSpotDAO.save(parkingSpot);
-
 
 
         response.setViewName("redirect:/park/Search");

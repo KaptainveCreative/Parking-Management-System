@@ -16,35 +16,34 @@ import java.util.List;
 
 @Slf4j
 @Controller
-public class ParkSpotController{
+public class ParkSpotController {
 
 
-        @Autowired
-        private ParkingSpotDAO parkingSpotDAO;
+    @Autowired
+    private ParkingSpotDAO parkingSpotDAO;
 
 
-        @GetMapping( "/park/Search")
-        public ModelAndView search(  String state) {
-            ModelAndView response = new ModelAndView();
+    @GetMapping("/park/Search")
+    public ModelAndView search(String state) {
+        ModelAndView response = new ModelAndView();
 
-            response.setViewName("park/Search");
-
-
-
-            List<ParkingSpot> parkingSpots = parkingSpotDAO.findByStateIgnoreCase( state); // finding spots by state
-
-            response.addObject("parkingSpots", parkingSpots);
+        response.setViewName("park/Search");
 
 
-            List<ParkingSpot> allparkingSpots = parkingSpotDAO.findByStatus("Available"); // When you reserve a spot, the status changes to not available
+        List<ParkingSpot> parkingSpots = parkingSpotDAO.findByStateIgnoreCase(state); // finding spots by state
+
+        response.addObject("parkingSpots", parkingSpots);
 
 
-            response.addObject("allparkingSpots", allparkingSpots);
+        List<ParkingSpot> allparkingSpots = parkingSpotDAO.findByStatus("Available"); // When you reserve a spot, the status changes to not available
 
-            response.setViewName("park/Search");
 
-            return response;
-        }
+        response.addObject("allparkingSpots", allparkingSpots);
+
+        response.setViewName("park/Search");
+
+        return response;
+    }
 
 
 }

@@ -1,6 +1,7 @@
 package casestudy.database.Entity;
 
 import lombok.*;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +23,6 @@ public class Company {
 
     @Column(name = "company_name", nullable = false, length = 45)
     private String companyName;
-
 
 
     @OneToMany(mappedBy = "company")

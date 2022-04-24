@@ -36,39 +36,28 @@ public class ReserveController {
     private ParkingSpotDAO parkingSpotDAO;
 
 
-    @RequestMapping(value = {"/park/Reserve/{parkingSpotId}","/park/Reserve"} , method = RequestMethod.GET)
-    public ModelAndView reserveView(@PathVariable ( required = false) Integer parkingSpotId) throws Exception {
+    @RequestMapping(value = {"/park/Reserve/{parkingSpotId}", "/park/Reserve"}, method = RequestMethod.GET)
+    public ModelAndView reserveView(@PathVariable(required = false) Integer parkingSpotId) throws Exception {
         ModelAndView response = new ModelAndView();
-
 
 
         response.setViewName("park/Reserve");
 
-    //userService.getCurrentUser() -- > grab the logged in user from the database
+        //userService.getCurrentUser() -- > grab the logged in user from the database
         //getReservations() ---> getting reservations that belongs to this user ( it is joining on a user ID )
         response.addObject("reservationList", userService.getCurrentUser().getReservations());
 
-        response.addObject("hideForm", parkingSpotId==null);
+        response.addObject("hideForm", parkingSpotId == null);
 
         return response;
     }
 
-// add erad me
-
-
-    // /js unit
-    // add preauth
-    // if statment in JSTL
-    // use log.debug really important
-    // have a dropdown to the ids
-    // Make sure you show Junit
-    // Make sure you show security
 
     //    -------------------------------------------------------------------------------
     //@GetMapping(value = "/park/reserve/{parkingSpotId}")
     @PostMapping(value = "/park/Reserve/{parkingSpotId}")
     //@Date_TimeFormat(iso = DateTimeFormat.ISO.DATE) Date date)
-    public String reserveSpot(@PathVariable Integer parkingSpotId, @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")  Date date) throws Exception {
+    public String reserveSpot(@PathVariable Integer parkingSpotId, @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm") Date date) throws Exception {
 
         log.debug("The current logged in user");
 
@@ -79,7 +68,7 @@ public class ReserveController {
         log.info(userObj.toString());
 
 
-            User user = new User();
+        User user = new User();
         ParkingSpot parkingSpot = parkingSpotDAO.getById(parkingSpotId); //getting the entity from the database using the id so you can set the relationship
         parkingSpot.setStatus("Not Available");
         // 1 - Grab the id and map it to the database
@@ -93,13 +82,10 @@ public class ReserveController {
         reserve.setUser(userService.getCurrentUser());
 
 
-         reserveDAO.save(reserve);
-
-
+        reserveDAO.save(reserve);
 
 
         return "redirect:/park/Search";
-
 
 
     }

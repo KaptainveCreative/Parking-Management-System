@@ -33,7 +33,7 @@ public class ReviewController {
     @Autowired
     private ParkingSpotDAO parkingSpotDAO;
 
-    @RequestMapping(value ="/park/Review", method = RequestMethod.GET)
+    @RequestMapping(value = "/park/Review", method = RequestMethod.GET)
     public ModelAndView review() throws Exception {
 
         ModelAndView response = new ModelAndView();
@@ -52,10 +52,7 @@ public class ReviewController {
     }
 
 
-
-
-
-    @RequestMapping(value = "/park/ReviewSubmit", method = {RequestMethod.POST,RequestMethod.GET })
+    @RequestMapping(value = "/park/ReviewSubmit", method = {RequestMethod.POST, RequestMethod.GET})
 
     public ModelAndView reviewSubmit(@Valid ReviewFormBean form) throws Exception {
         ModelAndView response = new ModelAndView();
@@ -73,42 +70,28 @@ public class ReviewController {
 
         reviewDAO.save(review);
 
-       response.setViewName("redirect:/park/Review");
+        response.setViewName("redirect:/park/Review");
         return response;
 
     }
 
 
-
-
-     @PreAuthorize("hasAuthority('ADMIN')")
-    @PostMapping( "/park/Review/{id}")
-    public String deleteReviews(@PathVariable Integer id ) {
-     //   ModelAndView response = new ModelAndView();
-
-        //response.setViewName("park/Review");
+    @PreAuthorize("hasAuthority('ADMIN')")
+    @PostMapping("/park/Review/{id}")
+    public String deleteReviews(@PathVariable Integer id) {
 
 
         // This method will populate the all the companies and let the user giver a review using the id
 
-         Review deleteReview = reviewDAO.getById(id); // finding All spots
-         //log.info(id.toString());
-
-         reviewDAO.deleteById(id);
-         //log.info(deleteReview.toString());
+        Review deleteReview = reviewDAO.getById(id); // finding All spots
 
 
+        reviewDAO.deleteById(id);
 
-
-        //response.addObject("deleteReview", deleteReview);
-
-        //response.setViewName("redirect:/park/Review");
 
         return "redirect:/park/Review";
 
     }
-
-
 
 
 }

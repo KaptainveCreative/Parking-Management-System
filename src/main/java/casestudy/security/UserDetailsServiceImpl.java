@@ -1,4 +1,5 @@
 package casestudy.security;
+
 import casestudy.database.DAO.UserDAO;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
@@ -16,6 +17,7 @@ import casestudy.database.Entity.User;
 import casestudy.database.Entity.UserRole;
 import casestudy.database.DAO.UserDAO;
 import casestudy.database.DAO.UserRoleDAO;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -28,6 +30,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     private UserDAO userDao;
     @Autowired
     private UserRoleDAO userRoleDao;
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userDao.findByEmail(username);
@@ -60,10 +63,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     }
 
 
-
-    public User getCurrentUser () { // return used already logged
+    public User getCurrentUser() { // return used already logged
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-
 
 
         return userDao.findByEmail(auth.getName());

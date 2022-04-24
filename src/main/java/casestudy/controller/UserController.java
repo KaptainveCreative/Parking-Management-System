@@ -27,7 +27,6 @@ import java.util.List;
 
 @Slf4j
 @Controller
-//@PreAuthorize("hasAnyAuthority('USER','ADMIN')") // this can be done at the method level too
 public class UserController {
     @Autowired
     private UserDAO userDAO;
@@ -38,9 +37,9 @@ public class UserController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-/*
-* This is a generic page I created so that I can test the site for Tomcat connectivity*/
-    @RequestMapping(value ="/index", method = RequestMethod.GET)
+    /*
+     * This is a generic page I created so that I can test the site for Tomcat connectivity*/
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
     public ModelAndView index() throws Exception {
 
         ModelAndView response = new ModelAndView();
@@ -63,8 +62,8 @@ public class UserController {
 
     }
 
-        /*
-    * This page sets up the form*/
+    /*
+     * This page sets up the form*/
     @RequestMapping(value = "/login/SignupSubmit", method = RequestMethod.POST)
     public ModelAndView SignupSubmit(@Valid RegisterFormBean form, BindingResult bindingResult) throws Exception {
         ModelAndView response = new ModelAndView();
@@ -80,7 +79,7 @@ public class UserController {
             for (ObjectError error : bindingResult.getAllErrors()) {
                 errorMessages.add(error.getDefaultMessage());
                 //errors.put(((FieldError) error).getField(), error.getDefaultMessage());
-                log.info( ((FieldError) error).getField() + " " + error.getDefaultMessage() )   ;
+                log.info(((FieldError) error).getField() + " " + error.getDefaultMessage());
             }
 
             response.addObject("form", form);
@@ -93,7 +92,7 @@ public class UserController {
 
             return response;
         }
-        //response.addObject("form", form);
+
 
         User user = new User();
         user.setEmail(form.getEmail());
@@ -102,14 +101,13 @@ public class UserController {
         //user.setPassword(form.getPassword());
         user.setPaymentMethod(form.getPaymentMethod());
         user.setPhoneNumber(form.getPhoneNumber());
-        user.setDate( new Date() );
+        user.setDate(new Date());
 
         String password = passwordEncoder.encode(form.getPassword());
 
         user.setPassword(password);
         userDAO.save(user);
 
-        //userRoleDAO.save(user);
 
         Integer newUserId = userDAO.findByEmail(user.getEmail()).getId();
         UserRole newUserRole = new UserRole();
@@ -118,15 +116,10 @@ public class UserController {
         userRoleDAO.save(newUserRole);
 
 
-
-        //response.addObject("form", form);
         response.setViewName("redirect:/login/login");
         return response;
 
     }
 
-
-    //@GetMapping("park/Search")
-    //@PreAuthorize("hasAuthority('ADMIN')")
 
 }

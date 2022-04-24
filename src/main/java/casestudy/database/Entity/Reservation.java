@@ -28,28 +28,21 @@ public class Reservation {
     private Integer zipcode;
 
 
-
     @Basic
-    @Column(name ="date")
-    @Temporal( TemporalType.TIMESTAMP)
+    @Column(name = "date")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date date;
-    //private LocalDate birthDate;
-//    @Column(name = "date", nullable = false)
-
-
 
     @ToString.Exclude
-    @ManyToOne ( fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "users_id", referencedColumnName = "id", nullable = false)
     private User user;
 
 
-
     @ToString.Exclude
-    @ManyToOne ( fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "parkingspots_id", referencedColumnName = "id", nullable = false)
     private ParkingSpot parkingspot;
-
 
 
 }

@@ -24,25 +24,25 @@ public class ListFormBean {
     private Integer id;
 
     @Digits(message = "Zipcode field is required", integer = 5, fraction = 0)
-    @NotNull( message = "Zipcode field is required")
+    @NotNull(message = "Zipcode field is required")
     private Integer zipcode;
 
-    @NotNull(message="Price field is required")
+    @NotNull(message = "Price field is required")
     private BigDecimal price;
 
 
     private Integer rating;
 
-    @NotEmpty(message="Status field is required")
+    @NotEmpty(message = "Status field is required")
     private String status;
 
-    @NotEmpty(message="State field is required")
+    @NotEmpty(message = "State field is required")
     private String state;
 
     //@NotNull(message="Spot count field is required")
     private Integer quantity;
 
-    @NotEmpty(message="You must provide the name of the spot to be addressed as")
+    @NotEmpty(message = "You must provide the name of the spot to be addressed as")
     private String companyName;
 
 

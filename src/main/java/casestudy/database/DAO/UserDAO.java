@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface UserDAO extends JpaRepository<User, Long> {
+public interface UserDAO extends JpaRepository<User, Integer> {
 
     public List<User> findByFirstName(@Param("firstName") String firstName);
 
@@ -16,8 +16,6 @@ public interface UserDAO extends JpaRepository<User, Long> {
     public User findByEmail(@Param("email") String email);
 
     public User findByPhoneNumber(@Param("phone_number") String phoneNumber);
-
-
 
 
 }

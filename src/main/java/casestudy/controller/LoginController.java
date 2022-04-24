@@ -12,10 +12,9 @@ import org.springframework.web.servlet.ModelAndView;
 public class LoginController {
 
 
+    @RequestMapping(value = "/login/login", method = RequestMethod.GET)
 
-    @RequestMapping(value = "/login/login" , method = RequestMethod.GET)
-
-    public ModelAndView index() throws  Exception{
+    public ModelAndView index() throws Exception {
         ModelAndView response = new ModelAndView();
 
         response.setViewName("login/loginForm"); // must match the jsp file name

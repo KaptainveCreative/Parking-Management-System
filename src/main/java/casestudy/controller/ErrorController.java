@@ -12,7 +12,6 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 
 
-
 @Slf4j
 @Controller
 @ControllerAdvice
@@ -30,7 +29,7 @@ public class ErrorController {
         model.addObject("message", ex.getMessage());
         model.addObject("stackTrace", stackTrace);
 
-        if (ex.getCause() != null ) {
+        if (ex.getCause() != null) {
             Throwable root = ExceptionUtils.getRootCause(ex);
             model.addObject("rootcause", root);
 

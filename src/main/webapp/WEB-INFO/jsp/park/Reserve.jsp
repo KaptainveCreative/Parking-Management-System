@@ -11,6 +11,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <link rel="stylesheet" href="../../../pub/css/reserve.css">
+
 </head>
 
 
@@ -46,7 +48,7 @@
     <tr scope="row">
 
 
-        <th>Parking Spot </th>
+        <th>Parking Spot Owner</th>
         <th>Customer Name</th>
         <th>Charge</th>
         <th>Scheduled date</th>
@@ -76,9 +78,9 @@
 
     </c:forEach>
 
+</table>
 
-</body>
-</html>
+
 
 
 <jsp:include page="../include/footer.jsp"/>

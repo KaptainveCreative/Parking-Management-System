@@ -31,13 +31,10 @@ public class Review {
     private String customerReviews;
 
 
-
-
     @ToString.Exclude
     @ManyToOne
     @JoinColumn(name = "company_id")
     private Company company;
-
 
 
 }
