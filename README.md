@@ -44,4 +44,4 @@ owner.
 
 # Code with me and Collab
 
-  ## Feel free to reach you for collab at @khldmnsr91@gmail.com
+  ## Feel free to reach out for collab at @khldmnsr91@gmail.com
