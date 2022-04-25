@@ -10,7 +10,7 @@ owner.
      * List a parking spot
      ![image](https://user-images.githubusercontent.com/94082410/165072145-e3dea67e-c10b-41e0-8e55-fa5d0cb79043.png)
      * Search for a parking spot 
-     ![image](https://user-images.githubusercontent.com/94082410/165072313-41c5d6d5-4370-4695-8169-c86557dd68e4.png)
+    ![image](https://user-images.githubusercontent.com/94082410/165075143-73080f42-1b2b-49aa-b9ec-db2d7d3d8e11.png)
      * Reserve an existing parking spot
      ![image](https://user-images.githubusercontent.com/94082410/165073477-f01a6828-a74d-40a1-9903-e33a7da696c4.png)
      * Leave a review 
