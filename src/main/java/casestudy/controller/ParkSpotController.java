@@ -29,16 +29,24 @@ public class ParkSpotController {
 
         response.setViewName("park/Search");
 
+        List<ParkingSpot> allparkingSpots = parkingSpotDAO.findByStatus("Available"); // When you reserve a spot, the status changes to not available
+        response.addObject("allparkingSpots", allparkingSpots);
+
 
         List<ParkingSpot> parkingSpots = parkingSpotDAO.findByStateIgnoreCase(state); // finding spots by state
 
+
+
+        if (  state != null && parkingSpots.isEmpty() ) {
+
+            String error = "Sorry! We are currently not operating in " + state;
+            response.addObject("error", error);
+            return response;
+        }
+
+
         response.addObject("parkingSpots", parkingSpots);
 
-
-        List<ParkingSpot> allparkingSpots = parkingSpotDAO.findByStatus("Available"); // When you reserve a spot, the status changes to not available
-
-
-        response.addObject("allparkingSpots", allparkingSpots);
 
         response.setViewName("park/Search");
 
