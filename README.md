@@ -7,6 +7,7 @@ owner.
 
 # Features 
   Users ( individual / business) can
+  
      * List a parking spot
      ![image](https://user-images.githubusercontent.com/94082410/165072145-e3dea67e-c10b-41e0-8e55-fa5d0cb79043.png)
      * Search for a parking spot 
@@ -31,3 +32,17 @@ owner.
 ![image](https://user-images.githubusercontent.com/94082410/164548974-a1cf1945-b1f9-4c94-bd75-748108af4931.png)
 
 
+# Features under development
+
+  ### Swap bookings with different spots.
+  
+  ### Live Chat with an agent for inquiries.
+  
+  ### Check-out system.
+
+
+
+
+# Code with me and Collab
+
+  ## Feel free to reach you for collab at @khldmnsr91@gmail.com
