@@ -15,13 +15,16 @@ body {
     margin:  8% auto 0;
     text-align: center;
     opacity: 85% ;
+    border-radius: 20px;
+    height: auto;
+
     /* background-image: url(/images/P3.jpg); */
 }
 
 
 .sign-up-form h1{
-    color: #1c8adb;
-    margin-bottom: 30px
+    color: black;
+
 
 }
 

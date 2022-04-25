@@ -47,6 +47,7 @@ public class ReserveController {
         //getReservations() ---> getting reservations that belongs to this user ( it is joining on a user ID )
         response.addObject("reservationList", userService.getCurrentUser().getReservations());
 
+
         response.addObject("hideForm", parkingSpotId == null);
 
         return response;

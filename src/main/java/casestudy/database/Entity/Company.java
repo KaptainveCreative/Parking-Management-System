@@ -21,6 +21,7 @@ public class Company {
 
     private Integer id;
 
+
     @Column(name = "company_name", nullable = false, length = 45)
     private String companyName;
 

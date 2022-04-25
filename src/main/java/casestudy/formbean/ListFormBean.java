@@ -28,7 +28,7 @@ public class ListFormBean {
     private Integer zipcode;
 
     @NotNull(message = "Price field is required")
-    private BigDecimal price;
+    private Double price;
 
 
     private Integer rating;

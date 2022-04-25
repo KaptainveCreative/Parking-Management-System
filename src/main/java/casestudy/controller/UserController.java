@@ -55,8 +55,6 @@ public class UserController {
         ModelAndView response = new ModelAndView();
         response.setViewName("login/Signup");
 
-//        RegisterFormBean form = new RegisterFormBean();
-//        response.addObject("form", form);
 
         return response;
 

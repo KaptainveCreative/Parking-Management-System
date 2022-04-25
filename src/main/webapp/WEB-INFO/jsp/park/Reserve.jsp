@@ -16,27 +16,27 @@
 </head>
 
 
-
 <body>
 
 
 <c:if test="${!hideForm}">
 
-    <form action="/park/Reserve/${parkingSpotId}" method="post">
+<form action="/park/Reserve/${parkingSpotId}" method="post">
 
 
-        <!-- time and date-->
-        <div class="row mb-4">
-            <label class="form-label" for="dateId">Pick the date and time </label>
-            <input type="datetime-local" id="dateId" class="form-control" name="date" <%--value="${form.zipcode}"--%>
-                   placeholder="e.g. 02155" maxlength="5"/>
+    <!-- time and date-->
+    <div class="row mb-4">
+        <label class="label" class="form-label" for="dateId">Pick the date and time </label>
+        <br>
+        <input type="datetime-local" id="dateId" class="form-control" name="date" <%--value="${form.zipcode}"--%>
+               placeholder="e.g. 02155" maxlength="5"/>
 
-        </div>
+    </div>
 
-        <button type="submit">Submit</button>
+    <button type="submit">Reserve</button>
 
 
-    </form>
+</form>
 
 </c:if>
 
@@ -52,35 +52,29 @@
         <th>Customer Name</th>
         <th>Charge</th>
         <th>Scheduled date</th>
-        <th>Zipcode </th>
+        <th>Zipcode</th>
         <th>State</th>
-
 
 
     </tr>
 
     <c:forEach items="${reservationList}" var="reserve">
-    <tr scope="row">
-        <td>${reserve.parkingspot.company.companyName}</td>
-        <td>${reserve.user.firstName} ${reserve.user.lastName} </td>
+        <tr class="results" scope="row">
 
-        <td>${reserve.parkingspot.price} </td>
-<%--        <td>${reserve.parkingspot.quantity}</td>--%>
-        <td>${reserve.date}</td>
-        <td>${reserve.zipcode}</td>
-        <td>${reserve.parkingspot.state}</td>
-<%--        <td><a href="/park/Reserve/${reserve.id}">Reserve</a></td>--%>
+            <td>${reserve.parkingspot.company.companyName}</td>
+            <td>${reserve.user.firstName} ${reserve.user.lastName} </td>
 
-            <%--                    <td>${spot.companyName}</td>--%>
-            <%--                    <td>${spot.company_id}</td>--%>
+            <td>${reserve.parkingspot.price} </td>
 
-    </tr>
+            <td>${reserve.date}</td>
+            <td>${reserve.zipcode}</td>
+            <td>${reserve.parkingspot.state}</td>
+
+        </tr>
 
     </c:forEach>
 
 </table>
-
-
 
 
 <jsp:include page="../include/footer.jsp"/>

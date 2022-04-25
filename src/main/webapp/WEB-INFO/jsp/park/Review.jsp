@@ -1,6 +1,6 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
-<jsp:include page="../include/header.jsp" />
+<jsp:include page="../include/header.jsp"/>
 
 <!doctype html>
 <html lang="en">
@@ -14,9 +14,8 @@
 <body>
 
 
-
-
-<h2> Here is a list of the companies we are contracted with. We would love to hear your thoughts. Please feel free to leave an honest review based on your experience </h2>
+<h2> Here is a list of the companies we are contracted with. We would love to hear your thoughts. Please feel free to
+    leave an honest review based on your experience </h2>
 
 
 <%--<form action="/park/ReviewAll" method="get" >--%>
@@ -30,13 +29,13 @@
 <%--</form>--%>
 
 <table class="table">
-    <tr scope="row">
+    <tr class="results" scope="row">
 
         <th>Company Id</th>
         <th>Company Name</th>
         <th>Status</th>
         <th>5 Scale Rating</th>
-        <th>Price for 1 Hour </th>
+        <th>Price for 1 Hour</th>
         <th>Spots Open</th>
         <th>Zipcode</th>
         <th>Available as of</th>
@@ -45,7 +44,7 @@
     </tr>
 
     <c:forEach items="${allparkingSpots}" var="allSpots">
-        <tr scope="row">
+        <tr class="results" scope="row">
             <td>${allSpots.company.id}</td>
             <td>${allSpots.company.companyName}</td>
             <td>${allSpots.status}</td>
@@ -78,27 +77,29 @@
                                  <a href="#"><i class="icofont-ui-rating icofont-2x"></i></a>
                                  </span>
     </div>
-    <form action="/park/ReviewSubmit" method="POST"  id="form">
+    <form action="/park/ReviewSubmit" method="POST" id="form">
         <div class="form-group">
             <label>Company Id </label>
-            <div class="form-outline mb-4" >
-               <input type="text" id="form2Example18" class="form-control form-control-lg"  placeholder="See Above" name="companyId"/>
+            <div class="form-outline mb-4">
+                <input type="text" id="form2Example18" class="form-control form-control-lg" placeholder="See Above"
+                       name="companyId"/>
             </div>
             <label>Customer name </label>
-            <div class="form-outline mb-4" >
-                <input type="text" id="form2Example17" class="form-control form-control-lg"  placeholder="" name="customerName"/>
+            <div class="form-outline mb-4">
+                <input type="text" id="form2Example17" class="form-control form-control-lg" placeholder=""
+                       name="customerName"/>
             </div>
-            <textarea  class="form-control"  placeholder="Give us your thoughts" name="customerReviews"></textarea>
+            <textarea class="form-control" placeholder="Give us your thoughts" name="customerReviews"></textarea>
         </div>
         <br>
         <div class="form-group">
 
-            <button class="btn btn-primary btn-sm" type="submit"> Submit Comment </button>
+            <button class="btn btn-primary btn-sm" type="submit"> Submit Comment</button>
 
 
-<%--            <c:if test="${form.customerReviews.length > 36}">--%>
-<%--                <h1>Thank you for leaving a review </h1>--%>
-<%--            </c:if>--%>
+            <%--            <c:if test="${form.customerReviews.length > 36}">--%>
+            <%--                <h1>Thank you for leaving a review </h1>--%>
+            <%--            </c:if>--%>
         </div>
     </form>
 </div>
@@ -133,16 +134,13 @@
 <%--</div>--%>
 
 
-
-
 <table class="table">
-    <tr scope="row">
+    <tr class="results" scope="row">
 
 
         <th> Customer Name</th>
         <th> Feedback</th>
         <th> Parking Facilitator</th>
-
 
 
     </tr>
@@ -173,4 +171,4 @@
 </html>
 
 
-<jsp:include page="../include/footer.jsp" />
+<jsp:include page="../include/footer.jsp"/>

@@ -1,6 +1,6 @@
 body {
 
-    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(255, 255, 255, 0.7) );
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(255, 255, 255, 0.7));
 
     background-image: url("../images/reviewpage.jpg");
     min-height: 100vh;
@@ -19,14 +19,20 @@ body {
 }
 
 
-
 table {
     background-color: white;
     opacity: 85%;
+    border-radius: 20px;
 
 }
 
 
+table .results:hover {
+
+    background-color: #333333;
+    color: white;
+
+}
 
 h2 {
     border-radius: 80px;
@@ -35,4 +41,13 @@ h2 {
     align-content: center;
     text-align: center;
     color: white;
+}
+table .results:hover {
+    /*opacity: 100%;*/
+    /*width: 105%;*/
+    /*height: 105%;*/
+    /*transition: .2s;*/
+    background-color: #333333;
+    color: white;
+
 }

@@ -36,8 +36,7 @@ public class ParkSpotController {
         List<ParkingSpot> parkingSpots = parkingSpotDAO.findByStateIgnoreCase(state); // finding spots by state
 
 
-
-        if (  state != null && parkingSpots.isEmpty() ) {
+        if (state != null && parkingSpots.isEmpty()) {
 
             String error = "Sorry! We are currently not operating in " + state;
             response.addObject("error", error);

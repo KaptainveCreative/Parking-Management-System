@@ -13,8 +13,35 @@ body {
 }
 
 table {
-     background-color: white;
-    opacity: 80%;
+    background-color: white;
+    border-radius: 20px;
+    opacity: 90%;
+
+
+}
+
+
+table .results:hover {
+
+    background-color: #333333;
+    color: white;
+
+}
+
+
+.label {
+    border-radius: 30px;
+    background-color: deepskyblue;
+    color: black;
+    width: auto;
+    opacity: 90%;
+    font-size: 30px;
+}
+
+
+.label:hover {
+    background-color: black;
+    color: white;
 
 }
 
@@ -42,4 +69,5 @@ h4 {
     align-content: center;
     text-align: center;
     color: black;
+
 }

@@ -81,7 +81,6 @@ public class ReviewController {
     public String deleteReviews(@PathVariable Integer id) {
 
 
-        // This method will populate the all the companies and let the user giver a review using the id
 
         Review deleteReview = reviewDAO.getById(id); // finding All spots
 

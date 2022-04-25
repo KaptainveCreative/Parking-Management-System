@@ -9,6 +9,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.*;
 
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -29,7 +30,7 @@ public class UserDAOTEST {
     UserDAO userDAO;
 
     @Autowired
-    private BCryptPasswordEncoder passwordEncoder;
+    private PasswordEncoder passwordEncoder;
 
 
     @Test
@@ -42,7 +43,7 @@ public class UserDAOTEST {
 
         //  User actual = userDAO.findByEmail("Khalid");
 
-        Assertions.assertThat(userOne.getEmail()).isEqualTo("khalid");
+        Assertions.assertThat(userOne.getEmail()).isEqualTo("khalid@bellator.com");
 
     }
 
@@ -56,6 +57,7 @@ public class UserDAOTEST {
 
 
     @ParameterizedTest
+    @CsvSource({"usman@ufc.com" , "1234567890"})
     void parameterizedTest(String email, String phoneNumber) {
         User expected = new User();
 

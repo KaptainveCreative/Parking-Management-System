@@ -5,15 +5,19 @@
 <html lang="en">
 
 <head>
-    <meta charset ="utf-8">
+    <meta charset="utf-8">
     <title>PMS</title>
     <link rel="stylesheet" href="../../../pub/css/header.css">
+    <link rel="stylesheet" href="../../../pub/css/test.css">
 </head>
 
 <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 
 <body>
 
@@ -48,24 +52,27 @@
 
                     <li class="nav-item">
                         <sec:authorize access="!isAuthenticated()">
-                        <a class="nav-link mx-2" href="/login/Signup"> <i class="fas fa-plus-circle pe-2"> </i>Sign up </a>
+                            <a class="nav-link mx-2" href="/login/Signup"> <i class="fas fa-plus-circle pe-2"> </i>Signup
+                            </a>
                         </sec:authorize>
 
 
                     </li>
                     <li>
                         <sec:authorize access="!isAuthenticated()">
-                            <a class="nav-link mx-2" href="/login/login"><i class="fas fa-plus-circle pe-2"></i>Login</a>
+                            <a class="nav-link mx-2" href="/login/login"> <i
+                                    class="fas fa-plus-circle pe-2"></i>Login</a>
                         </sec:authorize>
                     </li>
 
 
                     <li class="nav-item">
-<%--                        <a class="nav-link mx-2" href="#!"><i class="fas fa-bell pe-2"></i>Alerts</a>--%>
+                        <%--                        <a class="nav-link mx-2" href="#!"><i class="fas fa-bell pe-2"></i>Alerts</a>--%>
 
-    <sec:authorize access="isAuthenticated()">
+                        <sec:authorize access="isAuthenticated()">
                     <li class="nav-item">
-                            <a class="nav-link mx-2" href="/park/List"><i class="fas fa-heart pe-2"></i>List your parking spot?</a>
+                        <a class="nav-link mx-2" href="/park/List"><i class="fas fa-heart pe-2"></i>List your parking
+                            spot?</a>
                     </li>
 
                     <li class="nav-item">
@@ -73,7 +80,8 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link mx-2" href="/park/Reserve"><i class="fas fa-heart pe-2"></i> Current Reservations </a>
+                        <a class="nav-link mx-2" href="/park/Reserve"><i class="fas fa-heart pe-2"></i> Current
+                            Reservations </a>
                     </li>
 
                     <li class="nav-item">
@@ -87,24 +95,22 @@
                     </li>
 
 
-
                     <li id="userName">
                         <span>Hello!</span>
                         <sec:authentication property="principal.username"/>
                     </li>
 
 
-</sec:authorize>
+                    </sec:authorize>
 
-               </ul>
+                </ul>
             </div>
         </div>
     </nav>
     <!-- Navbar -->
 
-
-
-
     <br><br><br>
 
-   <hr>
+    <hr>
+
+
