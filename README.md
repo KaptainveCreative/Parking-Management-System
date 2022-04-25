@@ -6,8 +6,7 @@ owner.
 
 
 # Features 
-  Users ( individual / business) can
-  
+  Users ( individual / business) can:
      * List a parking spot
      ![image](https://user-images.githubusercontent.com/94082410/165072145-e3dea67e-c10b-41e0-8e55-fa5d0cb79043.png)
      * Search for a parking spot 
