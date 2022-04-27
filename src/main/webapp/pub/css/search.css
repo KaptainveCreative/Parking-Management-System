@@ -74,6 +74,8 @@ h4 {
     color: white;
     font-weight: bold;
     border: 1px solid white;
+
+
 }
 
 .button:hover {
@@ -95,5 +97,16 @@ h4 {
     font-weight: bold;
     border-radius: 80px;
 
+
+}
+
+.input-box{
+    border-radius: 30px;
+    padding: 10px;
+    margin: 10px 0;
+    width: 10%;
+    border: 1px solid #999;
+    outline: none;
+    /*opacity: 80%;*/
 
 }

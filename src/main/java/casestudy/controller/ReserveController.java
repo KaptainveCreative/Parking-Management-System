@@ -1,3 +1,10 @@
+/*
+* The ReserveController class helps to reserve a parking spot
+* The set-up:
+*  It uses a path variable to grab the id of the parking spot.
+* Once done, that idea will be  mapped to current spots and prompt user for time and date and shows current user their reservations
+* if not, then it would stay at the search page for all parking spots*/
+
 package casestudy.controller;
 
 
@@ -55,9 +62,9 @@ public class ReserveController {
 
 
     //    -------------------------------------------------------------------------------
-    //@GetMapping(value = "/park/reserve/{parkingSpotId}")
+
     @PostMapping(value = "/park/Reserve/{parkingSpotId}")
-    //@Date_TimeFormat(iso = DateTimeFormat.ISO.DATE) Date date)
+
     public String reserveSpot(@PathVariable Integer parkingSpotId, @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm") Date date) throws Exception {
 
         log.debug("The current logged in user");
@@ -72,7 +79,7 @@ public class ReserveController {
         User user = new User();
         ParkingSpot parkingSpot = parkingSpotDAO.getById(parkingSpotId); //getting the entity from the database using the id so you can set the relationship
         parkingSpot.setStatus("Not Available");
-        // 1 - Grab the id and map it to the database
+
         Reservation reserve = new Reservation();
 
         reserve.setDate(date);

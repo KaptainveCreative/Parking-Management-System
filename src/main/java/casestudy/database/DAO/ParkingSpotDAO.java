@@ -13,14 +13,14 @@ import java.util.List;
 @Repository
 public interface ParkingSpotDAO extends JpaRepository<ParkingSpot, Integer> {
 
-    @Query(value = "select * from parkingspots", nativeQuery = true)
+    @Query(value = "select * from parkingspots", nativeQuery = true) // Native query to get all live parking spots
     public List<ParkingSpot> findAll();
 
 
-    public List<ParkingSpot> findByStatus(String status);
+    public List<ParkingSpot> findByStatus(String status); // Finding parking spots by status
 
 
-    public List<ParkingSpot> findByStateIgnoreCase(@Param("state") String state); // ask Eric for the custom Query
+    public List<ParkingSpot> findByStateIgnoreCase(@Param("state") String state); // narrow down the search by state
 
 
 }

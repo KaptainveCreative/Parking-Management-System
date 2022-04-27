@@ -29,7 +29,7 @@ public class ParkingSpot {
     @Column(name = "price", nullable = false, precision = 2)
     private Double price;
 
-    @NonNull
+   // @NonNull
     @Column(name = "rating", nullable = false)
     private Integer rating;
 

@@ -13,7 +13,7 @@
         <%--Here are the states we are working with this
                 calendar year ( MN, NY, CA,IL, DC, CO,TX, NEB, GA, AZ )--%> </h4>
 
-    <input type="text" name="state" id="statusid" placeholder="e.g MN" maxlength="2">
+    <input  class="input-box" type="text" name="state" id="stateId" placeholder="e.g MN" maxlength="2">
     <button class="button" type="submit">Search</button>
 
 </form>
@@ -39,7 +39,7 @@
         <td>${spot.company.companyName}</td>
         <td>${spot.status}</td>
         <td>${spot.rating}</td>
-        <td>${spot.price}</td>
+        <td>$${spot.price}</td>
         <td>${spot.date}</td>
         <td>${spot.zipcode}</td>
         <td>${spot.state}</td>
@@ -73,7 +73,7 @@
                 <td>${allSpots.company.companyName}</td>
                 <td>${allSpots.status}</td>
                 <td>${allSpots.rating}</td>
-                <td>${allSpots.price}</td>
+                <td>$${allSpots.price}</td>
                 <td>${allSpots.date}</td>
                 <td>${allSpots.zipcode}</td>
                 <td>${allSpots.state}</td>

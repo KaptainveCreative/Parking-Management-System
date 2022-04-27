@@ -38,21 +38,21 @@ public class ReserveDAOTest {
 
 //Reservation getByZipcode(@Param("zipcode") Integer zipcode);
 
-    @Test
-    public void getByZipcode(){
-        Company company = new Company();
-        company.setCompanyName("Parkers");
-        company.setId(1);
-        companyDAO.save(company);
-
-        ParkingSpot spotOne = new ParkingSpot(55124, 6.25, 5, "Not Available", "MN",new Date(), 3);
-        spotOne.setCompany(company);
-
-
-        parkingSpotDAO.save(spotOne);
-
-        Assertions.assertThat(spotOne.getZipcode()).isEqualTo(spotOne.getZipcode());
-    }
+//    @Test
+//    public void getByZipcode(){
+//        Company company = new Company();
+//        company.setCompanyName("Parkers");
+//        company.setId(1);
+//        companyDAO.save(company);
+//
+//        ParkingSpot spotOne = new ParkingSpot(55124, 6.25, 5, "Not Available", "MN",new Date(), 3);
+//        spotOne.setCompany(company);
+//
+//
+//        parkingSpotDAO.save(spotOne);
+//
+//        Assertions.assertThat(spotOne.getZipcode()).isEqualTo(spotOne.getZipcode());
+//    }
 
 
 }

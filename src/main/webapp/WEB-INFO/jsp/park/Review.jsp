@@ -14,22 +14,13 @@
 <body>
 
 
-<h2> Here is a list of the companies we are contracted with. We would love to hear your thoughts. Please feel free to
+<h2> We take your feedback seriously! Here is a list of the companies we are contracted with. We would love to hear your
+    thoughts. Please feel free to
     leave an honest review based on your experience </h2>
 
 
-<%--<form action="/park/ReviewAll" method="get" >--%>
-<%--&lt;%&ndash;    We collaborate with companies across many states following states. Here are the states we are working with this calendar year ( MN, NY, CA,IL, DC, CO,TX, NEB, GA, AZ )&ndash;%&gt;--%>
-<%--&lt;%&ndash;    <br>&ndash;%&gt;--%>
-<%--&lt;%&ndash;    Search by state's acronym.&ndash;%&gt;--%>
-<%--&lt;%&ndash;    <input type="text" name="state" id="statusid">&ndash;%&gt;--%>
-<%--    <button type="submit" >Show List </button>--%>
-
-<%--    <br>--%>
-<%--</form>--%>
-
 <table class="table">
-    <tr class="results" scope="row">
+    <tr scope="row">
 
         <th>Company Id</th>
         <th>Company Name</th>
@@ -54,8 +45,6 @@
             <td>${allSpots.zipcode}</td>
             <td>${allSpots.date}</td>
             <td>${allSpots.state}</td>
-                <%--                    <td>${spot.companyName}</td>--%>
-                <%--                    <td>${spot.company_id}</td>--%>
 
         </tr>
 
@@ -82,8 +71,15 @@
             <label>Company Id </label>
             <div class="form-outline mb-4">
                 <input type="text" id="form2Example18" class="form-control form-control-lg" placeholder="See Above"
-                       name="companyId"/>
+                       name="companyId" value="${form.companyId}"/>
+
+                <v:forEach items="${bindingResult.getFieldErrors('companyId')}" var="error">
+                    <div style="color: red;"> ${error.getDefaultMessage()} </div>
+                </v:forEach>
+
             </div>
+
+
             <label>Customer name </label>
             <div class="form-outline mb-4">
                 <input type="text" id="form2Example17" class="form-control form-control-lg" placeholder=""

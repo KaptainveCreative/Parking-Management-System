@@ -41,7 +41,7 @@
 </c:if>
 
 
-<h1> Current Reservations</h1>
+<h1> Your Current Reservations</h1>
 
 
 <table class="table">

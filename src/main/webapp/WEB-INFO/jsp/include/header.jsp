@@ -8,7 +8,9 @@
     <meta charset="utf-8">
     <title>PMS</title>
     <link rel="stylesheet" href="../../../pub/css/header.css">
-    <link rel="stylesheet" href="../../../pub/css/test.css">
+
+    <script src="../../../pub/js/header.js" defer></script>
+
 </head>
 
 <script src="https://code.jquery.com/jquery-3.6.0.js"

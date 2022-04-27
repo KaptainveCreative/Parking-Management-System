@@ -13,18 +13,16 @@
     <link rel="stylesheet" href="../../pub/css/index.css">
 
 
-    <link href='https://fonts.googleapis.com/css?family=Sacramento:400' rel='stylesheet' type='text/css'>
 
 </head>
 <body>
 
 <sec:authorize access="!isAuthenticated()">
-
     <div class="Welcome">
-        <h1>Hello Pal!</h1>
+        <h1>Hello Pal! Welcome To Park Connect!</h1>
 
-        <p> Looking for a convenient service that helps you find where you can park your car or for way to rent your
-            parking spot? We can help </p>
+        <p> Here, we help you find a convenient, yet easy to use service to find where you can park your car or  to rent your
+            parking spot. We can also help you reach more clients </p>
 
         <br><br><br><br>
         <p> Please Click on Login / sign up in the top right corner to get started </p>
@@ -42,7 +40,7 @@
         <p> Now you take a look at all the services we provide. </p>
 
 
-        <p> use the navigation bar to check your the services </p>
+        <p> use the navigation bar to check our the services </p>
 
         <br>
 

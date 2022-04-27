@@ -1,3 +1,8 @@
+/*ListController class handles the listing a spot for a user/business
+ * it uses a frombean for capture the inputs of the users/business
+ * it handles errors using bindingresults for bad inputs
+ * it saves accepted data to the listing database    */
+
 package casestudy.controller;
 
 import casestudy.database.DAO.CompanyDAO;
@@ -51,6 +56,7 @@ public class ListController {
         ModelAndView response = new ModelAndView();
         log.info(form.toString());
 
+//        Error Handling for bad inputs
         if (bindingResult.hasErrors()) {
             List<String> errorMessages = new ArrayList<>();
             for (ObjectError error : bindingResult.getAllErrors()) {
@@ -70,10 +76,8 @@ public class ListController {
             return response;
         }
 
-
-
         /*-------------------------------------------------------------------*/
-
+//    valid inputs from the form bean will be added to the listing db
         ParkingSpot parkingSpot = new ParkingSpot();
         Company company = new Company();
 
@@ -84,7 +88,7 @@ public class ListController {
         parkingSpot.setDate((new Date()));
         parkingSpot.setZipcode((form.getZipcode()));
         parkingSpot.setPrice((form.getPrice()));
-        parkingSpot.setRating((form.getRating()));
+        //parkingSpot.setRating((form.getRating()));
         parkingSpot.setStatus((form.getStatus()));
         parkingSpot.setState((form.getState()));
         parkingSpot.setQuantity(1);

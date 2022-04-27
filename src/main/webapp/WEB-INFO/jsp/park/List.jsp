@@ -67,16 +67,30 @@
             </div>
 
             <!-- Rating input -->
-            <div class="form-outline mb-4">
-                <label class="form-label" for="ratingId">Enter your rating per BBP for your business</label>
-                <input type="text" id="ratingId" class="form-control" name="rating" placeholder="1-5" min="1" max="5"
-                       maxlength="1"/>
+
+                <div class="form-outline mb-4">
+                    <label for="status"> Rating per BBB - can be blank for personal users </label>
+                    <select name="rating" id="ratingId">
+                        <option></option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+
+                </div>
+<%--                <div class="form-outline mb-4">--%>
+<%--                    <label class="form-label" for="ratingId">Enter your rating per BBP for your business</label>--%>
+<%--                    <input type="text" id="ratingId" class="form-control" name="rating" placeholder="1-5" min="1" max="5"--%>
+<%--                           maxlength="1"/>--%>
 
 
-            </div>
+<%--            </div>--%>
 
             <!-- status input -->
             <div class="form-outline mb-4">
+                <label for="status"> Status </label>
 
                 <select name="status" id="status">
                     <option>Available</option>

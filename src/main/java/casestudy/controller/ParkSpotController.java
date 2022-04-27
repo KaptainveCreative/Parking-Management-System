@@ -1,3 +1,8 @@
+/*
+* This controller sets up the search page
+* implements methods from DAO to find parking spots with "available" status and search for parking spots in a given state
+* If spot not in state given, show a message to user
+* */
 package casestudy.controller;
 
 import casestudy.database.DAO.ParkingSpotDAO;

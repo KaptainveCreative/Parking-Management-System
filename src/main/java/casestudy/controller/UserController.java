@@ -66,7 +66,6 @@ public class UserController {
     public ModelAndView SignupSubmit(@Valid RegisterFormBean form, BindingResult bindingResult) throws Exception {
         ModelAndView response = new ModelAndView();
 
-        log.info(form.toString());
 
         log.debug(form.toString());
         response.setViewName("login/Signup");
